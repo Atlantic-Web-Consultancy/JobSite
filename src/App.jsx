@@ -1,4 +1,6 @@
 import React from 'react';
+import Landing from './components/landingPage/Landing.jsx';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -10,7 +12,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <h1>Leslie, App has rendered successfully.</h1>
+      <Landing />
     )
   }
 }
