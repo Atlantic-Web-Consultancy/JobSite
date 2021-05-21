@@ -17,41 +17,41 @@ class Landing extends React.Component {
       <Container fluid>
         <Row>
           <Col>
-          <Card>
-            <Card.Body>
-              <Card.Title>Apply</Card.Title>
-              <Card.Text>
-                Browse available job listings.
-              </Card.Text>
-              <Button variant="primary">Apply.</Button>
-            </Card.Body>
-          </Card>
+            <Card>
+              <Card.Body>
+                <Card.Title>Apply</Card.Title>
+                <Card.Text>
+                  Browse available job listings.
+                </Card.Text>
+                <Button variant="primary">Apply.</Button>
+              </Card.Body>
+            </Card>
           </Col>
           <Col>
-          <Card>
-            <Card.Body>
-              <Card.Title>View My Applications.</Card.Title>
-              <Card.Text>
-                View statuses of applications.
-              </Card.Text>
-              <Button variant="primary">See my</Button>
-            </Card.Body>
-          </Card>
+            <Card>
+              <Card.Body>
+                <Card.Title>View My Applications.</Card.Title>
+                <Card.Text>
+                  View statuses of applications.
+                </Card.Text>
+                <Button variant="primary">See my</Button>
+              </Card.Body>
+            </Card>
           </Col>
           <Col>
-          <Card>
-            <Card.Body>
-              <Card.Title>View My Calendar.</Card.Title>
-              <Card.Text>
-                Your next scheduled event here.
-              </Card.Text>
-              <Button variant="primary">Go to Calendar</Button>
-            </Card.Body>
-          </Card>
+            <Card>
+              <Card.Body>
+                <Card.Title>View My Calendar.</Card.Title>
+                <Card.Text>
+                  Your next scheduled event here.
+                </Card.Text>
+                <Button variant="primary">Go to Calendar</Button>
+              </Card.Body>
+            </Card>
           </Col>
         </Row>
       </Container>
-    )
+    );
   }
 }
 
