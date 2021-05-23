@@ -1,5 +1,7 @@
+/* eslint-disable import/extensions */
 import React from 'react';
-import Landing from './components/landingPage/Landing.jsx';
+import Landing from './components/Landing.jsx';
+import JobListings from './components/JobListings.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -10,7 +12,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <Landing />
+      // <Landing />
+      <JobListings />
     );
   }
 }
