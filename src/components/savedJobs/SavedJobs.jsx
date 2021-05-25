@@ -5,10 +5,11 @@ import TopNav from '../topNav/TopNav.jsx';
 
 const SavedJobs = props => {
   const [key, setKey] = useState('saved');
+  const [navItems, setNavItems] = useState(['Home', 'Calendar', 'Notes', 'Login/Logout']);
 
   return (
     <div>
-      <TopNav />
+      <TopNav navItems={navItems} />
       <div id="tabs">
         <Tabs
           activeKey={key}

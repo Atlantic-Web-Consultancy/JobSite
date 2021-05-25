@@ -16,14 +16,11 @@ const TopNav = props => (
       <Dropdown.Toggle id="dropdown-button" />
 
       <Dropdown.Menu id="dropdown-menu">
-        <LinkContainer to="/example">
-          <Dropdown.Item>Home</Dropdown.Item>
-        </LinkContainer>
-        <Dropdown.Item>Calendar</Dropdown.Item>
-        <Dropdown.Item>Notes</Dropdown.Item>
-        <LinkContainer to="/viewjobs">
-          <Dropdown.Item>My Jobs</Dropdown.Item>
-        </LinkContainer>
+        {props.navItems.map(item => (
+          <LinkContainer to={`/${item.split(' ').join('').toLowerCase()}`}>
+            <Dropdown.Item>{item}</Dropdown.Item>
+          </LinkContainer>
+        ))}
       </Dropdown.Menu>
     </Dropdown>
   </Navbar>
