@@ -1,0 +1,32 @@
+html {
+  background-color: #f7f7f7f7;
+}
+
+.form-control-lg {
+  font-size: 6rem;
+  margin-top: 30%;
+  border-radius: 1rem;
+  border: 3px solid #00b404;
+  transition: border-color 1s ease-in-out,box-shadow 1s ease-in-out;
+    transition-property: border-color, box-shadow;
+    transition-duration: 1s, 1s;
+    transition-timing-function: ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s;
+}
+/* .container {
+  max-width: 2000px;
+  min-height: fit-content;
+  border-radius: 5px;
+  margin-top: 10%;
+  margin-bottom: auto;
+  margin-left: 0;
+  margin-right: 0;
+} */
+
+/* .card-img {
+  min-height: 524px;
+  object-fit: cover;
+  align-content: center;
+  overflow: hidden;
+  object-position: 25% 0;
+} */
