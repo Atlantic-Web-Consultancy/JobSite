@@ -1,5 +1,6 @@
 import React from 'react';
 import Landing from './components/landingPage/Landing.jsx';
+import TopNav from './components/topNav/TopNav.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -10,7 +11,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <Landing />
+      <div>
+        <TopNav />
+        {/* <Landing /> */}
+      </div>
     );
   }
 }
