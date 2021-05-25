@@ -1,5 +1,6 @@
 #calendar-container {
   padding: 5%;
-  background: #000;
-  opacity: .95;
+  overflow-y: scroll;
+  width: 80%;
+  height: 70%;
 }

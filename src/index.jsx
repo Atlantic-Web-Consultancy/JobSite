@@ -11,7 +11,8 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
-        <Route exact path="/" component={Calendar} />
+        <Route exact path="/" component={App} />
+        <Route exact path="/calendar" display={true} component={Calendar} />
         <Route exact path="/home" component={App} />
         <Route path="/example" component={Example} />
         <Route path="/myjobs" component={SavedJobs} />
