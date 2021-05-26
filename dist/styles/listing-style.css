@@ -46,7 +46,7 @@
   grid-row-end: 4;
   border: 5px solid black;
   width: 90%;
-  background: green;
+  background: rgb(0, 200, 5);
   row-gap: 20px;
 }
 
@@ -57,7 +57,7 @@
   grid-row-end: 4;
   border: 5px solid black;
   width: 90%;
-  background: green;
+  background: rgb(0, 200, 5);
   text-align: center;
   display: block;
   position: relative;
@@ -108,7 +108,7 @@
 
 #formSlider {
   height: 1rem;
-  color: green;
+  color: rgb(0, 200, 5);
   width: 50%;
   position: relative;
   top: 10px;
