@@ -7,7 +7,7 @@
   width: 100vw;
   padding-right: 0;
   padding-left: 0;
-  background-color: f7f7f7;
+  background-color: #f7f7f7;
   color: white;
 }
 
@@ -24,8 +24,7 @@
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 3;
-  border: 2px solid black;
-  background: f7f7f7;
+  background-color: #f7f7f7;
 }
 
 #content {
@@ -37,7 +36,7 @@
   grid-template-columns: repeat(2, 1fr);
   align-items: stretch;
   justify-items: center;
-  background: f7f7f7;
+  background-color: #f7f7f7;
 }
 
 #listings {
@@ -65,14 +64,10 @@
 
 }
 
-#filter-box {
-  border: 5px solid black;
-  width: 85%;
-  height: 90%;
+#checkboxes {
   position: relative;
-  /* top: 20px; */
-  bottom: 10px;
-  width: 100%;
+  top: 15px;
+  left: 10px;
 }
 
 #income-1 {
@@ -99,7 +94,23 @@
   margin-bottom: 10px;
 }
 
+#slider-box {
+  position: relative;
+  text-align: left;
+  top: 10px;
+}
+
+#slider-labels {
+  position: relative;
+  top: 15px;
+  left: 10px;
+}
+
 #formSlider {
   height: 1rem;
   color: green;
+  width: 50%;
+  position: relative;
+  top: 10px;
+  left: 10px;
 }

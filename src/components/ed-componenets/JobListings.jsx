@@ -52,28 +52,35 @@ function JobListings() {
         <div id="filter-wrapper">
           <div style={{textAlign: "left"}}>
             <Form>
+            <Form.Label style={{position: "relative", left: "5%"}}>Type of Work</Form.Label>
             {['checkbox'].map((type) => (
-              <div key={`inline-${type}`} className="mb-3">
+              <div id="checkboxes" key={`inline-${type}`} className="mb-3">
                 <Form.Check inline label="part-time" name="full-time" type={type} id={`inline-${type}-1`} />
                 <Form.Check inline label="full-time" name="onsite" type={type} id={`inline-${type}-2`} />
               </div>
             ))}
             {['checkbox'].map((type) => (
-              <div key={`inline-${type}`} className="mb-3">
+              <div id="checkboxes" key={`inline-${type}`} className="mb-3">
                 <Form.Check inline label="remote" name="full-time" type={type} id={`inline-${type}-1`} />
                 <Form.Check inline label="onsite" name="onsite" type={type} id={`inline-${type}-2`} />
               </div>
             ))}
             </Form>
-          </div>
-          <div id="filter-box">
+
             <Form>
               <Form.Group controlId="formBasicRange">
-                <Form.Label>Salary Range</Form.Label>
-                <Form.Control id="formSlider" type="range" name="salaryMin" value={salaryMin} onChange={handleChange}/>
-                <Form.Control id="formSlider" type="range" name="salaryMax" value={salaryMax} onChange={handleChange}/>
+                <Form.Label style={{position: "relative", top: "30px", left: "5%", textAlign: "center"}}>Salary Range</Form.Label>
+                <div id="slider-box">
+                  <Form.Label id="slider-labels">Min $</Form.Label>
+                  <Form.Control id="formSlider" type="range" name="salaryMin" value={salaryMin} onChange={handleChange}/>
+                </div>
+                <div id="slider-box">
+                  <Form.Label id="slider-labels">Max $</Form.Label>
+                  <Form.Control id="formSlider" type="range" name="salaryMax" value={salaryMax} onChange={handleChange}/>
+                </div>
               </Form.Group>
             </Form>
+
           </div>
         </div>
       </div>
