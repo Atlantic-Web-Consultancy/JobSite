@@ -16,7 +16,7 @@ class ResumeSearchResults extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="resumeSearch_body">
         <div className="temp">
           <h2 className="header_text">Find a great hire,<h2 className="header_txt2"> Fast</h2> </h2>
           <Image className="resume_img" variant="top" src='resume_writing.jpeg' />

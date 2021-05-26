@@ -11,8 +11,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <Landing />
-      // <ResumeSearchResults />
+      // <Landing />
+      <ResumeSearchResults />
     );
   }
 }
