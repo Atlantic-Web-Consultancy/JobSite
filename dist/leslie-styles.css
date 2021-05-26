@@ -4,14 +4,14 @@ html {
 
 .form-control-lg {
   font-size: 6rem;
-  border-radius: 1rem;
-  border: 3px solid #00b404;
+  border-radius: 1rem 0 0 1rem;
+  border: 1px solid gainsboro;
   transition: border-color 1s ease-in-out,box-shadow 1s ease-in-out;
     transition-property: border-color, box-shadow;
     transition-duration: 1s, 1s;
     transition-timing-function: ease-in-out, ease-in-out;
     transition-delay: 0s, 0s;
-  opacity: .8;
+  opacity: .7;
 }
 
 #employerBG {
@@ -21,6 +21,10 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#employerInputContainer {
+  display: inline-flex;
 }
 
 /* .container {
