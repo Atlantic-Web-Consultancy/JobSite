@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -11,11 +10,11 @@ class ResumeSearchResults extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dummyData: [1, 2, 3]
+      dummyData: [1,2,3]
     }
   }
 
-  render() {
+  render () {
     return (
       <div className="resumeSearch_body">
         <div className="temp">
@@ -25,15 +24,15 @@ class ResumeSearchResults extends React.Component {
         <Container className="container_div">
           {
             this.state.dummyData.map((data, index) => (
-              <Card key={index} className="resume_card">
-                <Card.Body className="card.body_div">
-                  <Card.Title>Employee Name</Card.Title>
-                  <Card.Text>
-                    Short description from persons resume that will bleed off the card
+              <Card key = {index} className="resume_card">
+              <Card.Body className="card.body_div">
+                <Card.Title>Employee Name</Card.Title>
+                <Card.Text>
+                  Short description from persons resume that will bleed off the card
                 </Card.Text>
-                  <Button variant="primary" className="resume_btn">View Resume</Button>
-                </Card.Body>
-              </Card>
+                <Button variant="primary" className="resume_btn">View Resume</Button>
+              </Card.Body>
+            </Card>
             ))
           }
         </Container>
