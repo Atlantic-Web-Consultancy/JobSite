@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import TopNav from '../topNav/TopNav.jsx';
 
 class Landing extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class Landing extends React.Component {
   render() {
     return (
       <Container fluid>
-        <Row>
+        <Row className="my-5">
           <Col>
             <Card>
               <Card.Body>

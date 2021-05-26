@@ -5,17 +5,35 @@ import TopNav from '../topNav/TopNav.jsx';
 
 const SavedJobs = props => {
   const [key, setKey] = useState('saved');
-  const [navItems, setNavItems] = useState(['Home', 'Calendar', 'Notes', 'Login/Logout']);
 
   return (
     <div>
-      <TopNav navItems={navItems} />
       <div id="tabs">
         <Tabs
           activeKey={key}
           onSelect={(k) => setKey(k)}
         >
           <Tab eventKey="saved" title="Saved">
+            <div className="tabs">
+              <h2>Job Title</h2>
+              <section>Description</section>
+              <section>Status</section>
+            </div>
+            <div className="tabs">
+              <h2>Job Title</h2>
+              <section>Description</section>
+              <section>Status</section>
+            </div>
+            <div className="tabs">
+              <h2>Job Title</h2>
+              <section>Description</section>
+              <section>Status</section>
+            </div>
+            <div className="tabs">
+              <h2>Job Title</h2>
+              <section>Description</section>
+              <section>Status</section>
+            </div>
             <div className="tabs">
               <h2>Job Title</h2>
               <section>Description</section>
@@ -28,8 +46,48 @@ const SavedJobs = props => {
               <section>Description</section>
               <section>Status</section>
             </div>
+            <div className="tabs">
+              <h2>Job Title</h2>
+              <section>Description</section>
+              <section>Status</section>
+            </div>
+            <div className="tabs">
+              <h2>Job Title</h2>
+              <section>Description</section>
+              <section>Status</section>
+            </div>
+            <div className="tabs">
+              <h2>Job Title</h2>
+              <section>Description</section>
+              <section>Status</section>
+            </div>
+            <div className="tabs">
+              <h2>Job Title</h2>
+              <section>Description</section>
+              <section>Status</section>
+            </div>
           </Tab>
           <Tab eventKey="interviewed" title="Interviewed">
+            <div className="tabs">
+              <h2>Job Title</h2>
+              <section>Description</section>
+              <section>Status</section>
+            </div>
+            <div className="tabs">
+              <h2>Job Title</h2>
+              <section>Description</section>
+              <section>Status</section>
+            </div>
+            <div className="tabs">
+              <h2>Job Title</h2>
+              <section>Description</section>
+              <section>Status</section>
+            </div>
+            <div className="tabs">
+              <h2>Job Title</h2>
+              <section>Description</section>
+              <section>Status</section>
+            </div>
             <div className="tabs">
               <h2>Job Title</h2>
               <section>Description</section>
