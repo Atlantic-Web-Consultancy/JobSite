@@ -10,6 +10,8 @@ import FormControl from 'react-bootstrap/FormControl';
 function JobListings() {
   const [job, setJob] = useState('');
   const [zip, setZip] = useState('');
+  const [salaryMin, setSalaryMin] = useState('');
+  const [salaryMax, setSalaryMax] = useState('');
 
   const handleChange = () => {
     if (event.target.name === 'job') {
@@ -18,7 +20,14 @@ function JobListings() {
     if (event.target.name === 'zip') {
       setZip(event.target.value);
     }
+    if (event.target.name === 'salaryMin') {
+      setSalaryMin(event.target.value);
+    }
+    if (event.target.name === 'salaryMax') {
+      setSalaryMax(event.target.value);
+    }
   }
+
 
   return(
     <div id="wrapper" >
@@ -41,23 +50,34 @@ function JobListings() {
           </ul>
         </div>
         <div id="filter-wrapper">
-          <h3 style={{textAlign: "left"}}>[ ] remote job checkbox</h3>
+          <div style={{textAlign: "left"}}>
+            <Form>
+            {['checkbox'].map((type) => (
+              <div key={`inline-${type}`} className="mb-3">
+                <Form.Check inline label="part-time" name="full-time" type={type} id={`inline-${type}-1`} />
+                <Form.Check inline label="full-time" name="onsite" type={type} id={`inline-${type}-2`} />
+              </div>
+            ))}
+            {['checkbox'].map((type) => (
+              <div key={`inline-${type}`} className="mb-3">
+                <Form.Check inline label="remote" name="full-time" type={type} id={`inline-${type}-1`} />
+                <Form.Check inline label="onsite" name="onsite" type={type} id={`inline-${type}-2`} />
+              </div>
+            ))}
+            </Form>
+          </div>
           <div id="filter-box">
             <Form>
-              <Form.Row style={{position: "relative", top: "15px"}}>
-                <Col>
-                  <Form.Control placeholder="Min $$$" id="income-1"/>
-                </Col>
-                <div style={{position: "relative", right: 20,
-                    bottom: 5, fontSize: "2em"}}>-</div>
-                <Col>
-                  <Form.Control placeholder="Max $$$" id="income-2" />
-                </Col>
-              </Form.Row>
+              <Form.Group controlId="formBasicRange">
+                <Form.Label>Salary Range</Form.Label>
+                <Form.Control id="formSlider" type="range" name="salaryMin" value={salaryMin} onChange={handleChange}/>
+                <Form.Control id="formSlider" type="range" name="salaryMax" value={salaryMax} onChange={handleChange}/>
+              </Form.Group>
             </Form>
           </div>
         </div>
       </div>
+
     </div>
   )
 }
