@@ -5,14 +5,21 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import App from './App.jsx';
 import Example from './components/example/Example.jsx';
 import SavedJobs from './components/savedJobs/SavedJobs.jsx';
-import Calendar from './components/calendar/Calendar.jsx';
+import CalendarView from './components/calendar/CalendarView.jsx';
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
         <Route exact path="/" component={App} />
-        <Route exact path="/calendar" display={true} component={Calendar} />
+        <Route
+          path="/calendar"
+          render={() => (
+            <div>
+              <CalendarView display={true} isAuthed={true} />
+            </div>
+          )}
+        />
         <Route exact path="/home" component={App} />
         <Route path="/example" component={Example} />
         <Route path="/myjobs" component={SavedJobs} />

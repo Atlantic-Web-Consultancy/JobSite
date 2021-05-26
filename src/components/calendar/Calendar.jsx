@@ -2,6 +2,7 @@ import React from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import TopNav from '../topNav/TopNav.jsx';
+import styled from 'styled-components'
 
 // import '../../../dist/main.css';
 
@@ -14,9 +15,34 @@ class Calendar extends React.Component {
   }
 
   render() {
-    // if (this.props.display) {
+    const StyleWrapper = styled.div`
+      .fc td {
+        background: #f7f7f7;
+        color: #000;
+        // border-color: #000;
+      }
+      .fc {
+        height: 100%;
+      }
+      .fc .fc-toolbar-title {
+        color: #000;
+      }
+      a {
+        color: #000;
+      }
+      .fc .fc-scrollgrid {
+        // border-color: #000;
+      }
+      .fc .fc-button-group > .fc-button {
+        background-color: #000;
+      }
+      .fc .fc-button-primary {
+        background-color: #000;
+      }
+    `;
+    if (this.props.display) {
       return (
-        <div>
+        <StyleWrapper>
           <TopNav navItems={this.state.navItems} />
           <div id="calendar-container">
             <FullCalendar
@@ -24,10 +50,10 @@ class Calendar extends React.Component {
               plugins={[dayGridPlugin]}
             />
           </div>
-        </div>
+        </StyleWrapper>
       );
-    // }
-    // return <div />;
+    }
+    return <div />;
   }
 }
 

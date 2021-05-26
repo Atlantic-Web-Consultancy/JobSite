@@ -1,6 +1,27 @@
 #calendar-container {
   padding: 5%;
-  overflow-y: scroll;
+  /* overflow-y: scroll hidden; */
   width: 80%;
   height: 70%;
+  z-index: 999;
+  background-color: #c2eccd;
+  border-radius: 10px;
+  position: absolute;
+}
+
+.calendar-view-container {
+  z-index: 999;
+  margin-top: 12%;
+  margin-left: 10%;
+}
+
+.calendar-background {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 120%;
+  width: 100%;
+  background-color: #000;
+  opacity: .7;
+  /* z-index: 800; */
 }
