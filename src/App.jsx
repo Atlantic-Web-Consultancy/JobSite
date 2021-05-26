@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import React from 'react';
 import TopNav from './components/topNav/TopNav.jsx';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
