@@ -1,8 +1,7 @@
 import React from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
-import TopNav from '../topNav/TopNav.jsx';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 // import '../../../dist/main.css';
 
@@ -40,20 +39,17 @@ class Calendar extends React.Component {
         background-color: #000;
       }
     `;
-    if (this.props.display) {
-      return (
-        <StyleWrapper>
-          <TopNav navItems={this.state.navItems} />
-          <div id="calendar-container">
-            <FullCalendar
-              defaultView="dayGridMonth"
-              plugins={[dayGridPlugin]}
-            />
-          </div>
-        </StyleWrapper>
-      );
-    }
-    return <div />;
+    return (
+      <StyleWrapper>
+
+        <div id="calendar-container">
+          <FullCalendar
+            defaultView="dayGridMonth"
+            plugins={[dayGridPlugin]}
+          />
+        </div>
+      </StyleWrapper>
+    );
   }
 }
 

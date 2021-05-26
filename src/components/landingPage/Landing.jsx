@@ -10,15 +10,12 @@ class Landing extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      navItems: ['Home', 'Calendar', 'MyJobs', 'Notes', 'Login/Logout'],
-    };
+    this.state = {};
   }
 
   render() {
     return (
       <Container fluid>
-        <TopNav navItems={this.state.navItems} />
         <Row className="my-5">
           <Col>
             <Card>

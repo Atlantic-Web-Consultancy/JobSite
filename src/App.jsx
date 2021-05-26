@@ -3,38 +3,38 @@ import TopNav from './components/topNav/TopNav.jsx';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Example from './components/example/Example.jsx';
 import SavedJobs from './components/savedJobs/SavedJobs.jsx';
-import CalendarView from './components/calendar/CalendarView.jsx';
-import Landing from './components/landingPage/Landing.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      navItems: ['Home', 'Calendar', 'Notes', 'My Jobs', 'Login/Logout'],
+      navItems: ['My Jobs', 'Login/Logout'],
     };
   }
 
   render() {
     return (
-      <React.StrictMode>
-        <Router>
-          <Switch>
-            <Route exact path="/" component={Landing} />
-            <Route
-              path="/calendar"
-              render={() => (
-                <div>
-                  <CalendarView display={true} isAuthed={true} />
-                </div>
-              )}
-            />
-            <Route exact path="/home" component={Landing} />
-            <Route path="/example" component={Example} />
-            <Route path="/myjobs" component={SavedJobs} />
-          </Switch>
-        </Router>
-      </React.StrictMode>
+      <div>
+        <React.StrictMode>
+          <Router>
+            <TopNav navItems={this.state.navItems}/>
+            <Switch>
+              <Route exact path="/" component={Example} />
+              {/* <Route
+                path="/calendar"
+                render={() => (
+                  <div>
+                    <CalendarView display={true} isAuthed={true} />
+                  </div>
+                )}
+              /> */}
+              <Route exact path="/home" component={Example} />
+              <Route path="/myjobs" component={SavedJobs} />
+            </Switch>
+          </Router>
+        </React.StrictMode>
+      </div>
     );
   }
 }
