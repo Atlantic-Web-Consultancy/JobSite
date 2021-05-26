@@ -40,25 +40,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <Router>
-//       <Switch>
-//         <Route exact path="/" component={App} />
-//         <Route
-//           path="/calendar"
-//           render={() => (
-//             <div>
-//               <CalendarView display={true} isAuthed={true} />
-//             </div>
-//           )}
-//         />
-//         <Route exact path="/home" component={App} />
-//         <Route path="/example" component={Example} />
-//         <Route path="/myjobs" component={SavedJobs} />
-//       </Switch>
-//     </Router>
-//   </React.StrictMode>
-//   document.getElementById('root'),
-// );
