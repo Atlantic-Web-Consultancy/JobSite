@@ -1,0 +1,14 @@
+.account {
+  padding: 4% 10%;
+  margin-top: 5%;
+}
+
+.submit-btn {
+  color: #00C805;
+  background-color: #fff;
+  border: 1px solid #00c805;
+}
+
+.form-control {
+  border-color: #00c805;
+}
