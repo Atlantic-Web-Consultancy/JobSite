@@ -1,6 +1,7 @@
 import React from 'react';
 import Landing from './components/landingPage/Landing.jsx';
 import ResumeSearchResults from './components/ResumeSearchResults/ResumeSearchResults.jsx';
+import NotesModule from './components/NotesModule/NotesModule.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class App extends React.Component {
   render() {
     return (
       // <Landing />
-      <ResumeSearchResults />
+      // <ResumeSearchResults />
+      <NotesModule />
     );
   }
 }

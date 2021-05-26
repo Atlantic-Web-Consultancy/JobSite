@@ -92,3 +92,11 @@
 .resume_btn:hover {
   background-color: rgba(0,160,4);
 }
+
+.notesHeader {
+  background-color: rgba(0,160,4);
+}
+
+.notesFooter {
+  background-color: black;
+}
