@@ -19,10 +19,14 @@ class Account extends React.Component {
       gender: '',
       username: '',
       password: '',
+      organization: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.newEmployerCheck = this.newEmployerCheck.bind(this);
+    this.changeAccountView = this.changeAccountView.bind(this);
+    this.changeView = this.changeView.bind(this);
   }
 
   handleChange(e) {
@@ -35,6 +39,31 @@ class Account extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.handleSubmit(true);
+  }
+
+  changeView(view) {
+    this.props.changeView(view);
+  }
+
+  newEmployerCheck() {
+    if (this.props.logIn === 'newEmployer') {
+      return (
+        <Form.Group>
+          <Form.Label>Organization Name</Form.Label>
+          <Form.Control
+            onChange={this.handleChange}
+            value={this.state.organization}
+            type="text"
+            placeholder="Enter Organization Name"
+            name="organization"
+          />
+        </Form.Group>
+      );
+    }
+  }
+
+  changeAccountView(view) {
+    this.props.changeAccountView(view);
   }
 
   render() {
@@ -51,11 +80,32 @@ class Account extends React.Component {
       gender,
       username,
       password,
+      organization,
     } = this.state;
 
-    if (!this.props.loggedIn) {
+    if (this.props.logIn === 'employee') {
       return (
         <div className="account employee">
+          <Form.Group>
+            <Form.Label>Username</Form.Label>
+            <Form.Control name={username} value={username} onChange={this.handleChange} type="text" placeholder="Enter Username" />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Password</Form.Label>
+            <Form.Control value={password} name={password} onChange={this.handleChange} type="password" placeholder="Enter Password" />
+          </Form.Group>
+          <Form.Group>
+            <Button onSubmit={this.handleSubmit} style={{ marginTop: '15px' }} className="submit-btn" type="submit">Log In</Button>
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>New Here? Make an account</Form.Label>
+            <Button onClick={() => this.changeAccountView('new employee')} className="submit-btn">Make Account</Button>
+          </Form.Group>
+        </div>
+      );
+    } if (this.props.logIn === 'employer') {
+      return (
+        <div className="account employer">
           <Form.Group>
             <Form.Label>Username</Form.Label>
             <Form.Control name={username} value={username} onChange={this.handleChange} type="text" placeholder="Enter Username" />
@@ -66,10 +116,10 @@ class Account extends React.Component {
         </div>
       );
     }
-
     return (
-      <div className="account employee">
+      <div className="account">
         <Form>
+          {this.newEmployerCheck()}
           <Form.Group>
             <Form.Label>First Name</Form.Label>
             <Form.Control
@@ -170,12 +220,11 @@ class Account extends React.Component {
               name="gender"
             />
           </Form.Group>
-
           <Form.Group controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
             <Form.Control type="password" placeholder="Password" />
           </Form.Group>
-          <Button variant="primary" type="submit" className="submit-btn">
+          <Button onClick={() => this.changeView('employee')} variant="primary" type="button" className="submit-btn">
             Submit
           </Button>
         </Form>

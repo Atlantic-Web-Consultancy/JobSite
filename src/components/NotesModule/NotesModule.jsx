@@ -2,26 +2,20 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-const NotesModule = () => {
+const NotesModule = (props) => {
   const [show, setShow] = useState(true);
   const [notesBody, setnotesBody] = useState('');
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleClose = () => {
+    props.changeNotesView(false);
+  };
 
   const handleChange = (e) => {
     e.preventDefault();
     setnotesBody(e.target.value);
-  }
+  };
 
-
-
-  return (
-    <>
-      <Button className="resume_btn" variant="primary" onClick={handleShow}>
-        Launch demo modal
-      </Button>
-
+    return (
       <Modal show={show} onHide={handleClose}>
         <Modal.Header className="notesHeader" closeButton>
           <Modal.Title>Notes</Modal.Title>
@@ -40,9 +34,7 @@ const NotesModule = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-    </>
-  );
-}
-
+    );
+};
 
 export default NotesModule;

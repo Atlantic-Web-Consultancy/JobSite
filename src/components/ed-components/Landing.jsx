@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 // import image from '../../dist/fourthOne.jpeg';
 
 
-function Landing() {
+function Landing(props) {
   const [job, setJob] = useState('');
   const [location, setLocation] = useState('');
 
@@ -19,6 +19,10 @@ function Landing() {
       setLocation(event.target.value);
     }
   }
+
+  const changeView = (view) => {
+    props.changeView(view);
+  };
 
   return (
     <Container id="container">
@@ -44,7 +48,7 @@ function Landing() {
             </Form.Row>
           </Form>
           <div id="button-div">
-            <Button size="lg" id="landing-button" variant="primary">Post a Job for Free</Button>
+            <Button onClick={() => changeView('employee')}  size="lg" id="landing-button" variant="primary">Find A Job</Button>
           </div>
         </Col>
         <Col id="employer">
@@ -54,7 +58,7 @@ function Landing() {
             <h2 id="employer-h2">Sign up for our free trial that includes job description examples, unlimited candidate profiles, and easy-apply job postings to help you find the right fit.</h2>
           </div>
           <div>
-            <Button size="lg" id="landing-button" variant="primary">Post a Job for Free</Button>
+            <Button onClick={() => changeView('employer')} size="lg" id="landing-button" variant="primary">Search Candidates</Button>
           </div>
         </Col>
       </Row>

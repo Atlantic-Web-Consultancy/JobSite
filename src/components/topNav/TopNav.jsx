@@ -13,6 +13,30 @@ const TopNav = props => {
     setDisplay(toggleVal);
   };
 
+  const changeNotesView = (view) => {
+    props.changeNotesView(view);
+  };
+
+  if (props.navItems.includes('Landing')) {
+    return (
+      <Navbar id="main-nav" fixed="top">
+        <Nav>
+          <LinkContainer to="/">
+            <Navbar.Brand id="nav-logo">JobSite.</Navbar.Brand>
+          </LinkContainer>
+        </Nav>
+        <Dropdown id="dropdown">
+          <Dropdown.Toggle id="dropdown-button" />
+
+          <Dropdown.Menu id="dropdown-menu">
+            <LinkContainer to="/login/logout">
+              <Dropdown.Item>Login/Logout</Dropdown.Item>
+            </LinkContainer>
+          </Dropdown.Menu>
+        </Dropdown>
+      </Navbar>
+    );
+  }
   return (
     <div>
       <Navbar id="main-nav" fixed="top">
@@ -29,7 +53,7 @@ const TopNav = props => {
               <Dropdown.Item>Home</Dropdown.Item>
             </LinkContainer>
             <Dropdown.Item onClick={() => toggleCal(true)}>Calendar</Dropdown.Item>
-            <Dropdown.Item>Notes</Dropdown.Item>
+            <Dropdown.Item onClick={() => changeNotesView(true)}>Notes</Dropdown.Item>
             {props.navItems.map(item => (
               <LinkContainer to={`/${item.split(' ').join('').toLowerCase()}`}>
                 <Dropdown.Item>{item}</Dropdown.Item>
@@ -41,6 +65,6 @@ const TopNav = props => {
       <CalendarView toggleCal={toggleCal} display={display} />
     </div>
   );
-}
+};
 
 export default TopNav;
