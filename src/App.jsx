@@ -7,6 +7,7 @@ import Landing from './components/ed-components/Landing.jsx';
 import JobListings from './components/ed-components/JobListings.jsx';
 import JobSeekerUI from './components/jobSeeker/JobSeekerUI.jsx';
 import SavedJobs from './components/savedJobs/SavedJobs.jsx';
+import ResumeSearchResults from './components/ResumeSearchResults/ResumeSearchResults.jsx';
 import NotesModule from './components/NotesModule/NotesModule.jsx';
 
 class App extends React.Component {
