@@ -1,5 +1,9 @@
+body {
+  background-color: #f7f7f7;
+}
+
 #main-nav {
-  height: 9%;
+  height: 8%;
   background-color: #000!important;
   display: flex;
   align-items: center;
@@ -49,27 +53,3 @@
   color:#00C805!important;
 }
 
-#tabs {
-  position: relative;
-  top: 80px;
-  padding: 5px 30px;
-}
-
-.tabs {
-  border: 1px solid #000;
-  padding: 3% 0% 3% 7%;
-}
-
-.nav-link {
-  color:#000;
-  background-color: #f7f7f7;
-}
-
-.nav-link.active {
-  color:#00C805!important;
-  border-color:#00C805!important;
-}
-
-.nav-link:hover {
-  color:#00C805;
-}

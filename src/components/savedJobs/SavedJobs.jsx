@@ -21,6 +21,26 @@ const SavedJobs = props => {
               <section>Description</section>
               <section>Status</section>
             </div>
+            <div className="tabs">
+              <h2>Job Title</h2>
+              <section>Description</section>
+              <section>Status</section>
+            </div>
+            <div className="tabs">
+              <h2>Job Title</h2>
+              <section>Description</section>
+              <section>Status</section>
+            </div>
+            <div className="tabs">
+              <h2>Job Title</h2>
+              <section>Description</section>
+              <section>Status</section>
+            </div>
+            <div className="tabs">
+              <h2>Job Title</h2>
+              <section>Description</section>
+              <section>Status</section>
+            </div>
           </Tab>
           <Tab eventKey="applied" title="Applied">
             <div className="tabs">
@@ -28,8 +48,48 @@ const SavedJobs = props => {
               <section>Description</section>
               <section>Status</section>
             </div>
+            <div className="tabs">
+              <h2>Job Title</h2>
+              <section>Description</section>
+              <section>Status</section>
+            </div>
+            <div className="tabs">
+              <h2>Job Title</h2>
+              <section>Description</section>
+              <section>Status</section>
+            </div>
+            <div className="tabs">
+              <h2>Job Title</h2>
+              <section>Description</section>
+              <section>Status</section>
+            </div>
+            <div className="tabs">
+              <h2>Job Title</h2>
+              <section>Description</section>
+              <section>Status</section>
+            </div>
           </Tab>
           <Tab eventKey="interviewed" title="Interviewed">
+            <div className="tabs">
+              <h2>Job Title</h2>
+              <section>Description</section>
+              <section>Status</section>
+            </div>
+            <div className="tabs">
+              <h2>Job Title</h2>
+              <section>Description</section>
+              <section>Status</section>
+            </div>
+            <div className="tabs">
+              <h2>Job Title</h2>
+              <section>Description</section>
+              <section>Status</section>
+            </div>
+            <div className="tabs">
+              <h2>Job Title</h2>
+              <section>Description</section>
+              <section>Status</section>
+            </div>
             <div className="tabs">
               <h2>Job Title</h2>
               <section>Description</section>

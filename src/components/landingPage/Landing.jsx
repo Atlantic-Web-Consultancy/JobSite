@@ -4,18 +4,22 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import TopNav from '../topNav/TopNav.jsx';
 
 class Landing extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      navItems: ['Home', 'Calendar', 'MyJobs', 'Notes', 'Login/Logout'],
+    };
   }
 
   render() {
     return (
       <Container fluid>
-        <Row>
+        <TopNav navItems={this.state.navItems} />
+        <Row className="my-5">
           <Col>
             <Card>
               <Card.Body>
