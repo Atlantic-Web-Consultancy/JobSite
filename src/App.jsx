@@ -10,7 +10,7 @@ import JobSeekerUI from './components/jobSeeker/JobSeekerUI.jsx';
 import SavedJobs from './components/savedJobs/SavedJobs.jsx';
 import ResumeSearchResults from './components/ResumeSearchResults/ResumeSearchResults.jsx';
 import NotesModule from './components/NotesModule/NotesModule.jsx';
-// import EmployerUI from './components/Employer/EmployerUI.jsx';
+import EmployerUI from './components/employer/EmployerUI.jsx';
 
 class App extends React.Component {
   constructor() {
