@@ -5,7 +5,6 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import image from '../../dist/fourthOne.jpeg';
-import Test from './Test.jsx';
 
 
 function Landing() {
@@ -24,6 +23,9 @@ function Landing() {
   return (
     <Container id="container">
       <Row id="banner">
+        <Col id="image-1"></Col>
+        <Col id="image-2"></Col>
+        <Col id="image-3"></Col>
       </Row>
       <Row>
         <Col id="seeker">

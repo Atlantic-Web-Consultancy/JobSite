@@ -13,8 +13,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        {/* <Landing /> */}
-        <JobListings />
+        <Landing />
+        {/* <JobListings /> */}
       </div>
     );
   }

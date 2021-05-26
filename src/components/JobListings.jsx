@@ -10,8 +10,10 @@ function JobListings() {
     <div id="wrapper" >
       <div id="listing-header">
         header
-        <div id="listing-search-input">
-          <input />
+        <div id="listing-search-bars">
+          <input id="job-search"/>
+          <input id="zip-search"/>
+          <button>search</button>
         </div>
       </div>
       <div id="content">
