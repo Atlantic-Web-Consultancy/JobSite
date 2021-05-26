@@ -14,11 +14,13 @@ class JobSeekerUI extends React.Component {
 
   render() {
     return (
-      <Container style={{ container }}>
-        <Form.Group>
-          <Form.Control size="lg" type="text" placeholder="Search" />
-        </Form.Group>
-      </Container>
+      <div id="employerBG">
+        <Container>
+          <Form.Group>
+            <Form.Control size="lg" type="text" placeholder="Search" />
+          </Form.Group>
+        </Container>
+      </div>
     );
   }
 }

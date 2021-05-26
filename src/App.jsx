@@ -3,6 +3,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import JobSeekerUI from './components/JobSeeker/JobSeekerUI.jsx';
 import EmployerUI from './components/Employer/EmployerUI.jsx';
+import TopNav from './components/topnav/TopNav.jsx';
 
 class App extends React.Component {
   constructor() {
@@ -26,7 +27,8 @@ class App extends React.Component {
     const { jobSeeker } = this.state;
     return (
       <div id="pageWrapper">
-        <Button type="button" onClick={() => { this.toggleView(); }} style={{ margin: '1%' }}>Toggle JobSeeker/Employer View</Button>
+        <TopNav />
+        <Button type="button" onClick={() => { this.toggleView(); }} style={{ marginTop: '3%' }}>Toggle JobSeeker/Employer View</Button>
         { jobSeeker ? <JobSeekerUI /> : <EmployerUI />}
       </div>
     );

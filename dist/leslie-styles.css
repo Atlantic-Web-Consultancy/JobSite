@@ -4,7 +4,6 @@ html {
 
 .form-control-lg {
   font-size: 6rem;
-  margin-top: 30%;
   border-radius: 1rem;
   border: 3px solid #00b404;
   transition: border-color 1s ease-in-out,box-shadow 1s ease-in-out;
@@ -12,7 +11,18 @@ html {
     transition-duration: 1s, 1s;
     transition-timing-function: ease-in-out, ease-in-out;
     transition-delay: 0s, 0s;
+  opacity: .8;
 }
+
+#employerBG {
+  background-image: url("./jobsitebg.jpeg");
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* .container {
   max-width: 2000px;
   min-height: fit-content;
