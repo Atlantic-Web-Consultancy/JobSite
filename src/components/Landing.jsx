@@ -4,6 +4,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import image from '../../dist/fourthOne.jpeg';
+import Test from './Test.jsx';
 
 
 function Landing() {
@@ -21,6 +23,8 @@ function Landing() {
 
   return (
     <Container id="container">
+      <Row id="banner">
+      </Row>
       <Row>
         <Col id="seeker">
           <Row id="header-style">
@@ -44,8 +48,8 @@ function Landing() {
         <Col id="employer">
           <div id="header-style">
             <img />
-            <h1 id="seeker-h1">Slogan</h1>
-            <h2 id="seeker-h2">Sign up for our free trial that includes job description examples, unlimited candidate profiles, and easy-apply job postings to help you find the right fit.</h2>
+            <h1 id="employer-h1">Slogan</h1>
+            <h2 id="employer-h2">Sign up for our free trial that includes job description examples, unlimited candidate profiles, and easy-apply job postings to help you find the right fit.</h2>
           </div>
           <div>
             <Button size="lg" id="landing-button" variant="primary">Post a Job for Free</Button>
