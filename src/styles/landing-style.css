@@ -1,0 +1,146 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 2px solid black;
+  height: 100vh;
+  width: 100vw;
+  color: #efede8;
+}
+
+#banner {
+  display: flex;
+  height: 100%;
+}
+
+#image-1 {
+  background-image: url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1063&q=80");
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-height: 200px;
+}
+
+#image-2 {
+  background-image: url("./firstOne.jpeg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-height: 200px;
+}
+
+#image-3 {
+  background-image: url("https://images.unsplash.com/photo-1538688423619-a81d3f23454b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-height: 200px;
+}
+
+
+#seeker {
+  position: relative;
+  text-align: center;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  height: 90vh;
+  width: 100%;
+  border: 2px solid black;
+  background: grey;
+}
+
+#employer {
+  position: relative;
+  text-align: center;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  height: 90vh;
+  width: 100%;
+  border: 2px solid black;
+  background: grey;
+}
+
+#header-style {
+  position: relative;
+  /* display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-content: space-between; */
+  text-align: center;
+}
+
+#seeker-h1 {
+  text-align: center;
+  margin: 20px;
+  font-size: 7em;
+  /* align-self: center; */
+}
+
+#seeker-h2 {
+  /* align-self: center; */
+  margin: 20px;
+  font-size: 1.6em;
+}
+
+#employer-h1 {
+  align-self: center;
+  margin: 20px;
+  font-size: 7em;
+}
+
+#employer-h2 {
+  align-self: center;
+  margin: 20px;
+  font-size: 1.6em;
+}
+
+
+#form-row {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top:50px;
+}
+
+#job-title-input {
+  background: #34A300;
+  border: none;
+  border-bottom: 2px solid white;
+  border-radius: 4px;
+  color: white;
+  height: 30px;
+  width: 350px;
+}
+
+#zipcode-title-input {
+  background: #34A300;
+  border: none;
+  border-bottom: 2px solid white;
+  border-radius: 4px;
+  color: white;
+  height: 30px;
+  width: 350px;
+}
+
+#zipcode-title-input::placeholder {
+  color: white;
+  font-size: 1.5em;
+}
+
+#job-title-input::placeholder {
+  color: white;
+  font-size: 1.5em;
+}
+
+#landing-button {
+  background:#34A300;
+  /* align-self: flex-end; */
+  position: relative;
+  top: 60px;
+}
+
+#button-div {
+  align-self: flex-end;
+}
