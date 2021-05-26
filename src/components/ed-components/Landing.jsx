@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-// import image from '../../dist/fourthOne.jpeg';
+
 
 
 function Landing(props) {
@@ -25,7 +25,7 @@ function Landing(props) {
   };
 
   return (
-    <Container id="container">
+    <Container style={{ marginTop: '10%' }} id="container">
       <Row id="banner">
         <Col id="image-1"></Col>
         <Col id="image-2"></Col>
@@ -38,17 +38,17 @@ function Landing(props) {
             <h1 id="seeker-h1">Slogan</h1>
             <h2 id="seeker-h2">We're here to help, with thousands of open positions, resume assessments, job fit scoring, and tons of relevant career advice.</h2>
           </Row>
-          <Form>
-            <Form.Row id="form-row">
-              <label style={{ display: "none" }}>Search For Job</label>
-              <input id="job-title-input" type="job" placeholder="Job Title or Keyword" name="job" value={job} onChange={handleChange} />
-              <br />
-              <label style={{ display: "none" }}>City / Post Code</label>
-              <input id="zipcode-title-input" type="city" placeholder="Place: City or Post Code" name="location" value={location} onChange={handleChange} />
-            </Form.Row>
-          </Form>
+            <Form>
+              <Form.Row id="form-row">
+                <label style={{display: "none"}}>Search For Job</label>
+                <input id="job-title-input" type="job" placeholder="Job Title or Keyword" name="job" value={job} onChange={handleChange} />
+                <br/>
+                <label style={{display: "none"}}>City / Post Code</label>
+                  <input id="zipcode-title-input" type="city" placeholder="Place: City or Post Code" name="location" value={location} onChange={handleChange}/>
+              </Form.Row>
+            </Form>
           <div id="button-div">
-            <Button onClick={() => changeView('employee')}  size="lg" id="landing-button" variant="primary">Find A Job</Button>
+            <Button onClick={() => changeView('employee')} size="lg" id="landing-button" variant="primary">Find A Job</Button>
           </div>
         </Col>
         <Col id="employer">

@@ -4,7 +4,7 @@ function Listing() {
   return (
     <div id="listing">
       <div> job listing box </div>
-      <br/>
+      <br />
     </div>
   )
 }
