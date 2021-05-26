@@ -17,9 +17,12 @@ class Account extends React.Component {
       email: '',
       dob: '',
       gender: '',
+      username: '',
+      password: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e) {
@@ -29,13 +32,12 @@ class Account extends React.Component {
     });
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.handleSubmit(true);
+  }
+
   render() {
-    // if (this.props.employer) {
-    //   return (
-    //     <Form.Label>Organization</Form.Label>
-    //     <Form.Control type="text" placeholder="Enter Organization Name" />
-    //   );
-    // }
     const {
       firstName,
       lastName,
@@ -47,7 +49,23 @@ class Account extends React.Component {
       email,
       dob,
       gender,
+      username,
+      password,
     } = this.state;
+
+    if (!this.props.loggedIn) {
+      return (
+        <div className="account employee">
+          <Form.Group>
+            <Form.Label>Username</Form.Label>
+            <Form.Control name={username} value={username} onChange={this.handleChange} type="text" placeholder="Enter Username" />
+            <Form.Label>Password</Form.Label>
+            <Form.Control value={password} name={password} onChange={this.handleChange} type="password" placeholder="Enter Password" />
+            <Button onSubmit={this.handleSubmit} style={{ marginTop: '15px' }} className="submit-btn" type="submit">Log In</Button>
+          </Form.Group>
+        </div>
+      );
+    }
 
     return (
       <div className="account employee">
@@ -152,10 +170,6 @@ class Account extends React.Component {
               name="gender"
             />
           </Form.Group>
-
-          {/* <Form.Group controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="Check me out" />
-          </Form.Group> */}
 
           <Form.Group controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
