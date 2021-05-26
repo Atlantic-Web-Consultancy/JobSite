@@ -28,7 +28,7 @@ class App extends React.Component {
     return (
       <div id="pageWrapper">
         <TopNav />
-        <Button type="button" onClick={() => { this.toggleView(); }} style={{ marginTop: '3%' }}>Toggle JobSeeker/Employer View</Button>
+        <Button type="button" onClick={() => { this.toggleView(); }} style={{}}>Toggle JobSeeker/Employer View</Button>
         { jobSeeker ? <JobSeekerUI /> : <EmployerUI />}
       </div>
     );

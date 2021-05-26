@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import {
-  container, cardButton,
+  cardButton,
 } from './EmployerCSS.js';
 
 class JobSeekerUI extends React.Component {
@@ -16,7 +16,7 @@ class JobSeekerUI extends React.Component {
   render() {
     return (
       <div id="employerBG">
-        <Container>
+        <Container id="employerInputContainer">
           <Form.Group>
             <Form.Control size="lg" type="text" placeholder="Search" />
           </Form.Group>
