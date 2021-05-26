@@ -2,8 +2,9 @@ import React from 'react';
 
 function Listing() {
   return (
-    <div>
-      <li> job listing </li>
+    <div id="listing">
+      <div> job listing box </div>
+      <br/>
     </div>
   )
 }
