@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 
 import Listing from './Listing.jsx';
 import Form from 'react-bootstrap/Form';
+import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
+import FormControl from 'react-bootstrap/FormControl';
 
 function JobListings() {
   const [job, setJob] = useState('');
@@ -38,15 +40,21 @@ function JobListings() {
             <Listing />
           </ul>
         </div>
-        <div id="filters">
-          <h3>Filters section</h3>
+        <div id="filter-wrapper">
+          <h3 style={{textAlign: "left"}}>[ ] remote job checkbox</h3>
           <div id="filter-box">
-            <ul>
-              Place holder list items for filter options
-              <li>$</li>
-              <li>Distance</li>
-              <li>Interest</li>
-            </ul>
+            <Form>
+              <Form.Row style={{position: "relative", top: "15px"}}>
+                <Col>
+                  <Form.Control placeholder="Min $$$" id="income-1"/>
+                </Col>
+                <div style={{position: "relative", right: 20,
+                    bottom: 5, fontSize: "2em"}}>-</div>
+                <Col>
+                  <Form.Control placeholder="Max $$$" id="income-2" />
+                </Col>
+              </Form.Row>
+            </Form>
           </div>
         </div>
       </div>
