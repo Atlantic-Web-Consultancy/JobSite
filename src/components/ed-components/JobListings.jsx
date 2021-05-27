@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import $ from 'jquery';
 import Listing from './Listing.jsx';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
@@ -16,7 +16,6 @@ function JobListings() {
   const [maxSlider, setSalaryMax] = useState('');
   const [min, setMinSalary] = useState(0);
   const [max, setMaxSalary] = useState(0);
-
 
   const handleChange = () => {
     if (event.target.name === 'job') {
@@ -53,6 +52,37 @@ function JobListings() {
     }
   }
 
+  const handleSubmit = (event) => {
+    console.log('Called')
+    event.preventDefault()
+    if (partTime) {
+      var employmentType = 'Full-Time'
+    } else {
+      var employmentType = 'Full-Time'
+    }
+    if (remote) {
+      var remote = 'Remote'
+    } else {
+      var remote = 'Onsite'
+    }
+    $.ajax({
+      url: "3.137.145.92/jobs",
+      type: "get",
+      data: {
+        employmentTitle: job,
+        employmentType,
+        remote,
+        salaryMin: min,
+        salaryMax: max,
+      },
+      success: (response) => {
+        console.log(response)
+      },
+      error: (err) => {
+        console.log(err)
+      }
+    });
+  }
 
   return(
     <div id="wrapper" >
@@ -63,21 +93,19 @@ function JobListings() {
           <label style={{display: "none"}}>Search For Job</label>
           <input id="job-listing-input" type="job" placeholder="Job Title or Keyword" name="job" value={job} onChange={handleChange} />
           <br/>
-          <label style={{display: "none"}}>City / Zip</label>
-            <input id="zipcode-listing-input" type="city" placeholder="Place: City or Post Code" name="zip" value={zip} onChange={handleChange}/>
+          <label style={{display: "none"}}>City / Zip Code</label>
+            <input id="zipcode-listing-input" type="city" placeholder="City / Zip" name="zip" value={zip} onChange={handleChange}/>
+            <button>Search</button>
       </div>
       <div id="content">
         <div id="listings">
           <h2 style={{textAlign: "center"}}>Listings </h2>
           <ul id="listings-ul">
             <Listing />
-            <Listing />
-            <Listing />
-            <Listing />
           </ul>
         </div>
         <div id="filter-wrapper">
-          <div id="filters">
+          <div id="checkboxes">
             <label>
             Want to Work Part-Time?
             <input
@@ -95,27 +123,28 @@ function JobListings() {
                   checked={remote}
                   onChange={handleInputChange} />
               </label>
-
-            <Form>
+          </div>
+          <Form id="listing-sliders">
               <Form.Group >
                 <Form.Label style={{position: "relative", top: "30px", left: "5%", textAlign: "center"}}>Salary Range</Form.Label>
                 <div id="slider-box">
-                  <Form.Label id="slider-labels">Min $</Form.Label>
+                  <Form.Label id="slider-labels">Min $ : {min}</Form.Label>
                   <Form.Control id="formSlider-1" type="range" name="salaryMin" value={minSlider} onChange={handleChange}/>
                 </div>
                 <div id="slider-box">
-                  <Form.Label id="slider-labels">Max $</Form.Label>
+                  <Form.Label id="slider-labels">Max $ : {max}</Form.Label>
                   <Form.Control id="formSlider-2" type="range" name="salaryMax" value={maxSlider} onChange={handleChange}/>
                 </div>
               </Form.Group>
+              <Button id="slider-button" variant="primary" type="submit" onClick={handleSubmit}>
+                Submit
+              </Button>
             </Form>
-
-          </div>
         </div>
       </div>
-
     </div>
   )
 }
 
 export default JobListings;
+

@@ -1,0 +1,21 @@
+#listing-wrapper {
+  border: 2px solid black;
+  background: #c2eccd;
+  color: black;
+  padding: 10;
+  margin: 10;
+  position: relative;
+  right: 20;
+}
+
+#first-row {
+  border: 2px solid black;
+  padding: 10;
+  margin: 10;
+}
+
+#description-wrapper {
+  border: 2px solid black;
+  padding: 10;
+  margin: 10;
+}
