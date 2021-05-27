@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import { LinkContainer } from 'react-router-bootstrap';
 import {
   cardStyle1, cardStyle2, cardStyle3, cardButton, container, cardGroup,
   cardTitle, cardText, cardImg, firstCard,
@@ -30,7 +31,9 @@ class JobSeekerUI extends React.Component {
               <Card.Text style={cardText}>
                 Browse available job listings.
               </Card.Text>
-              <Button variant="primary" style={cardButton} size="lg">Browse</Button>
+              <LinkContainer to="/joblistings">
+                <Button className="green-btn" variant="primary" style={cardButton} size="lg">Browse</Button>
+              </LinkContainer>
             </Card.Body>
           </Card>
 
@@ -40,7 +43,9 @@ class JobSeekerUI extends React.Component {
               <Card.Text style={cardText}>
                 View applications, notes, and more.
               </Card.Text>
-              <Button variant="primary" style={cardButton} size="lg">Job Radar</Button>
+              <LinkContainer to="/myjobs">
+                <Button className="green-btn" variant="primary" style={cardButton} size="lg">Job Radar</Button>
+              </LinkContainer>
             </Card.Body>
           </Card>
 
@@ -50,7 +55,7 @@ class JobSeekerUI extends React.Component {
               <Card.Text style={cardText}>
                 See the next scheduled event here.
               </Card.Text>
-              <Button variant="primary" style={cardButton} size="lg">Calendar</Button>
+              <Button className="green-btn" variant="primary" style={cardButton} size="lg">Calendar</Button>
             </Card.Body>
           </Card>
 
