@@ -60,10 +60,11 @@ function JobListings() {
         header
       </div>
       <div id="tests">
-        <h1>test</h1>
-          <input id="job-search"  size="50"placeholder="Job Title or Keyword" name="job" value={job} onChange={handleChange}/>
-          <input id="zip-search" size="10"placeholder="Zipcode or Location" name="zip" value={zip} onChange={handleChange}/>
-          <button>search</button>
+          <label style={{display: "none"}}>Search For Job</label>
+          <input id="job-listing-input" type="job" placeholder="Job Title or Keyword" name="job" value={job} onChange={handleChange} />
+          <br/>
+          <label style={{display: "none"}}>City / Zip</label>
+            <input id="zipcode-listing-input" type="city" placeholder="Place: City or Post Code" name="zip" value={zip} onChange={handleChange}/>
       </div>
       <div id="content">
         <div id="listings">
@@ -76,7 +77,7 @@ function JobListings() {
           </ul>
         </div>
         <div id="filter-wrapper">
-          <div style={{textAlign: "left"}}>
+          <div id="filters">
             <label>
             Want to Work Part-Time?
             <input

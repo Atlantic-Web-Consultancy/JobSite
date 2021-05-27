@@ -14,21 +14,45 @@
 #tests {
   border: 2px solid black;
   position: relative;
+  display: flex;
+  align-items: flex-end;
+  left: 35;
   width: 80%;
-    left: 39;
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
 }
 
-#listing-search-input {
+/* #listing-search-input {
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
   position: relative;
   border: 2px solid black;
+} */
+
+#job-listing-input {
+  background: black;
+  border: none;
+  border-bottom: 2px solid white;
+  border-radius: 4px;
+  color: white;
+  height: 50;
+  width: 350px;
+  font-size: 40;
+}
+
+#zipcode-listing-input {
+  background: black;
+  border: none;
+  border-bottom: 2px solid white;
+  border-radius: 4px;
+  color: white;
+  height: 50;
+  width: 290;
+  font-size: 40;
 }
 
 #listing-header {
@@ -58,7 +82,7 @@
   grid-row-end: 4;
   border: 5px solid black;
   width: 90%;
-  background: rgb(0, 200, 5);
+  background:green;
   row-gap: 20px;
 }
 
@@ -69,7 +93,7 @@
   grid-row-end: 4;
   border: 5px solid black;
   width: 90%;
-  background: rgb(0, 200, 5);
+  background: green;
   text-align: center;
   display: block;
   position: relative;
@@ -120,7 +144,7 @@
 
 #formSlider-1 {
   height: 1rem;
-  color: rgb(0, 200, 5);
+  color: green;
   width: 50%;
   position: relative;
   top: 10px;
@@ -129,7 +153,7 @@
 
 #formSlider-2 {
   height: 1rem;
-  color: rgb(0, 200, 5);
+  color: green;
   width: 50%;
   position: relative;
   top: 10px;
