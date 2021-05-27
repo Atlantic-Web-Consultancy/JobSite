@@ -1,7 +1,7 @@
 const container = {
   minWidth: '100vw',
   minHeight: 'fit-content',
-  marginTop: '10%',
+  marginTop: '12%',
   marginLeft: '0',
   marginRight: '0',
   padding: '0',

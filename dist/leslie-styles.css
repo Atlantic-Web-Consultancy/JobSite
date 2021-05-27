@@ -26,21 +26,3 @@ html {
 #employerInputContainer {
   display: inline-flex;
 }
-
-/* .container {
-  max-width: 2000px;
-  min-height: fit-content;
-  border-radius: 5px;
-  margin-top: 10%;
-  margin-bottom: auto;
-  margin-left: 0;
-  margin-right: 0;
-} */
-
-/* .card-img {
-  min-height: 524px;
-  object-fit: cover;
-  align-content: center;
-  overflow: hidden;
-  object-position: 25% 0;
-} */
