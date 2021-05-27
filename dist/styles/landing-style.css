@@ -46,7 +46,7 @@
   height: 90vh;
   width: 100%;
   border: 2px solid grey;
-  background: black;
+  background: green;
 }
 
 #employer {
@@ -59,7 +59,7 @@
   height: 90vh;
   width: 100%;
   border: 2px solid grey;
-  background: black;
+  background: green;
 }
 
 #header-style {
@@ -106,7 +106,7 @@
 }
 
 #job-title-input {
-  background: #34A300;
+  background: black;
   border: none;
   border-bottom: 2px solid white;
   border-radius: 4px;
@@ -116,7 +116,7 @@
 }
 
 #zipcode-title-input {
-  background: #34A300;
+  background: black;
   border: none;
   border-bottom: 2px solid white;
   border-radius: 4px;
@@ -136,7 +136,7 @@
 }
 
 #landing-button {
-  background:#34A300;
+  background:black;
   /* align-self: flex-end; */
   position: relative;
   top: 60px;

@@ -10,8 +10,13 @@ import FormControl from 'react-bootstrap/FormControl';
 function JobListings() {
   const [job, setJob] = useState('');
   const [zip, setZip] = useState('');
-  const [salaryMin, setSalaryMin] = useState('');
-  const [salaryMax, setSalaryMax] = useState('');
+  const [partTime, setPartTime] = useState(false);
+  const [remote, setRemote] = useState(false);
+  const [minSlider, setSalaryMin] = useState('');
+  const [maxSlider, setSalaryMax] = useState('');
+  const [min, setMinSalary] = useState(0);
+  const [max, setMaxSalary] = useState(0);
+
 
   const handleChange = () => {
     if (event.target.name === 'job') {
@@ -21,10 +26,30 @@ function JobListings() {
       setZip(event.target.value);
     }
     if (event.target.name === 'salaryMin') {
-      setSalaryMin(event.target.value);
+      const minSlider = parseInt(event.target.value);
+      const min = (minSlider * 1000);
+      console.log('minsalary ', min)
+      setMinSalary(min)
+      setSalaryMin(minSlider);
     }
     if (event.target.name === 'salaryMax') {
-      setSalaryMax(event.target.value);
+      const maxSlider = parseInt(event.target.value);
+      const max = (maxSlider * 10000);
+      console.log('max', max);
+      setMaxSalary(max);
+      setSalaryMax(maxSlider);
+    }
+  }
+
+  const handleInputChange = () => {
+    const target = event.target;
+    const name = target.name;
+
+    if (event.target.name === 'part-time') {
+      setPartTime(!partTime);
+    }
+    if (event.target.name === 'remote') {
+      setRemote(!remote);
     }
   }
 
@@ -33,11 +58,12 @@ function JobListings() {
     <div id="wrapper" >
       <div id="listing-header">
         header
-        <div>
-          <input id="job-search" placeholder="Job Title or Keyword" name="job" value={job} onChange={handleChange}/>
-          <input id="zip-search" placeholder="Zipcode or Location" name="zip" value={zip} onChange={handleChange}/>
+      </div>
+      <div id="tests">
+        <h1>test</h1>
+          <input id="job-search"  size="50"placeholder="Job Title or Keyword" name="job" value={job} onChange={handleChange}/>
+          <input id="zip-search" size="10"placeholder="Zipcode or Location" name="zip" value={zip} onChange={handleChange}/>
           <button>search</button>
-        </div>
       </div>
       <div id="content">
         <div id="listings">
@@ -51,32 +77,34 @@ function JobListings() {
         </div>
         <div id="filter-wrapper">
           <div style={{textAlign: "left"}}>
-            <Form>
-            <Form.Label style={{position: "relative", left: "5%"}}>Type of Work</Form.Label>
-            {['checkbox'].map((type) => (
-              <div id="checkboxes" key={`inline-${type}`} className="mb-3">
-                <Form.Check inline label="part-time" name="full-time" type={type} id={`inline-${type}-1`} />
-                <Form.Check inline label="full-time" name="onsite" type={type} id={`inline-${type}-2`} />
-              </div>
-            ))}
-            {['checkbox'].map((type) => (
-              <div id="checkboxes" key={`inline-${type}`} className="mb-3">
-                <Form.Check inline label="remote" name="full-time" type={type} id={`inline-${type}-1`} />
-                <Form.Check inline label="onsite" name="onsite" type={type} id={`inline-${type}-2`} />
-              </div>
-            ))}
-            </Form>
+            <label>
+            Want to Work Part-Time?
+            <input
+              name="part-time"
+              type="checkbox"
+              checked={partTime}
+              onChange={handleInputChange} />
+            </label>
+              <br />
+              <label>
+                Want to Work Remote?
+                <input
+                  name="remote"
+                  type="checkbox"
+                  checked={remote}
+                  onChange={handleInputChange} />
+              </label>
 
             <Form>
-              <Form.Group controlId="formBasicRange">
+              <Form.Group >
                 <Form.Label style={{position: "relative", top: "30px", left: "5%", textAlign: "center"}}>Salary Range</Form.Label>
                 <div id="slider-box">
                   <Form.Label id="slider-labels">Min $</Form.Label>
-                  <Form.Control id="formSlider" type="range" name="salaryMin" value={salaryMin} onChange={handleChange}/>
+                  <Form.Control id="formSlider-1" type="range" name="salaryMin" value={minSlider} onChange={handleChange}/>
                 </div>
                 <div id="slider-box">
                   <Form.Label id="slider-labels">Max $</Form.Label>
-                  <Form.Control id="formSlider" type="range" name="salaryMax" value={salaryMax} onChange={handleChange}/>
+                  <Form.Control id="formSlider-2" type="range" name="salaryMax" value={maxSlider} onChange={handleChange}/>
                 </div>
               </Form.Group>
             </Form>
