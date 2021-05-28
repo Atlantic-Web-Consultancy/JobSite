@@ -44,6 +44,21 @@ app.get('/employers/jobpostings', (req, res) => {
     })
 })
 
+app.get('/seekers/applications', (req, res) => {
+  axios.get(`${apiBase}/seekers/applications`, {
+    headers: {
+      Cookie: req.headers.cookie,
+    }})
+    .then((response) => {
+      res.status(200)
+      res.send(response.data)
+    })
+    .catch((err) => {
+      res.status(404)
+      res.send(err);
+    })
+})
+
 app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}`);
 });
