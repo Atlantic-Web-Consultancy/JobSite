@@ -7,7 +7,7 @@
   width: 100vw;
   padding-right: 0;
   padding-left: 0;
-  background-color: #c2eccd;
+  background-color: white;
   color: white;
 }
 
@@ -66,10 +66,9 @@
   grid-template-columns: repeat(2, 1fr);
   align-items: stretch;
   justify-items: center;
-  background-color: green;
-  position: relative;
-    left: 60;
-    top: 20;
+  background-color: white;
+  position:relative;
+  left: 100;
 }
 
 #listings {
@@ -161,6 +160,6 @@
 #slider-button {
   border: 2px solid black;
   position: relative;
-  bottom: 20;
+  bottom: 50;
   left: 900;
 }

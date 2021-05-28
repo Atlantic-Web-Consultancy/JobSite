@@ -97,13 +97,6 @@ function JobListings() {
       <div id="listing-header">
         header
       </div>
-      <div id="tests">
-          {/* <label style={{display: "none"}}>Search For Job</label>
-          <input id="job-listing-input" type="job" placeholder="Job Title or Keyword" name="job" value={job} onChange={handleChange}/>
-          <br/>
-          <label style={{display: "none"}}>Miles Away</label>
-            <input id="zipcode-listing-input" type="city" placeholder="Miles Away" name="zip" value={zip} onChange={handleChange}/> */}
-      </div>
       <div id="content">
         <div id="filter-wrapper">
           <div id="checkboxes">
