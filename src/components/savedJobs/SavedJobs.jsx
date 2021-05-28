@@ -45,25 +45,37 @@ class SavedJobs extends React.Component {
             onSelect={(k) => this.setState({key: k})}
           >
             <Tab eventKey="saved" title="Saved">
+              {this.state.savedApps.map((application) => {
+                return (
               <div className="tabs">
-                <h2>Job Title</h2>
-                <section>Description</section>
-                <section>Status</section>
+                <h2>{application.title}</h2>
+                <section>{application.description}</section>
+                <section>{application.status}</section>
               </div>
+                )
+              })}
             </Tab>
             <Tab eventKey="applied" title="Applied">
+            {this.state.appliedApps.map((application) => {
+                return (
               <div className="tabs">
-                <h2>Job Title</h2>
-                <section>Description</section>
-                <section>Status</section>
+                <h2>{application.title}</h2>
+                <section>{application.description}</section>
+                <section>{application.status}</section>
               </div>
+                )
+            })}
             </Tab>
             <Tab eventKey="interviewed" title="Interviewed">
+              {this.state.interviewedApps.map((application) => {
+                return (
               <div className="tabs">
-                <h2>Job Title</h2>
-                <section>Description</section>
-                <section>Status</section>
+                <h2>{application.title}</h2>
+                <section>{application.description}</section>
+                <section>{application.status}</section>
               </div>
+                )
+              })}
             </Tab>
           </Tabs>
         </div>
