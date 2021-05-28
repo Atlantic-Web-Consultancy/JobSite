@@ -16,6 +16,7 @@ function Listing({job}) {
       <section>Experience Required: {job.experience_level}</section>
       <br />
       <section>Salary: ${job.salary}</section>
+      <section>{moment(humanDateFormat).fromNow()}</section>
       <br />
       <div id="applyButton">Apply Today!</div>
     </div>
