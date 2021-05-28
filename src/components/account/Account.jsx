@@ -108,3 +108,14 @@ class Account extends React.Component {
 }
 
 export default Account;
+
+
+//zip is integer data type
+//employer:
+//username
+//first_name
+//last_name
+//email
+//phone
+//organization
+//password
