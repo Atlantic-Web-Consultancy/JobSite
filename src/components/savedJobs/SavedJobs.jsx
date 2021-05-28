@@ -8,16 +8,33 @@ class SavedJobs extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      apps: {},
+      savedApps: [],
+      appliedApps: [],
+      interviewedApps: [],
       showApps: false,
       key: 'saved'
     }
   }
 
   componentDidMount() {
-    Parse.login((data) => setApps(data));
+    Parse.login((data) => this.filterApps(data));
   }
 
+  filterApps(applications) {
+    const savedApps = [];
+    const appliedApps = [];
+    const interviewedApps = [];
+    for (let i = 0; i < applications.length; i++) {
+      if (applications[i].status === 'Applied') {
+        appliedApps.push(applications[i])
+      } else if (applications[i].status === 'Saved') {
+        savedApps.push(applications[i])
+      } else if (applications[i].status === 'Interviewed') {
+        interviewedApps.push(applications[i])
+      }
+    }
+    this.setState({appliedApps, savedApps, interviewedApps})
+  }
 
   render () {
     return (
@@ -33,26 +50,6 @@ class SavedJobs extends React.Component {
                 <section>Description</section>
                 <section>Status</section>
               </div>
-              <div className="tabs">
-                <h2>Job Title</h2>
-                <section>Description</section>
-                <section>Status</section>
-              </div>
-              <div className="tabs">
-                <h2>Job Title</h2>
-                <section>Description</section>
-                <section>Status</section>
-              </div>
-              <div className="tabs">
-                <h2>Job Title</h2>
-                <section>Description</section>
-                <section>Status</section>
-              </div>
-              <div className="tabs">
-                <h2>Job Title</h2>
-                <section>Description</section>
-                <section>Status</section>
-              </div>
             </Tab>
             <Tab eventKey="applied" title="Applied">
               <div className="tabs">
@@ -60,48 +57,8 @@ class SavedJobs extends React.Component {
                 <section>Description</section>
                 <section>Status</section>
               </div>
-              <div className="tabs">
-                <h2>Job Title</h2>
-                <section>Description</section>
-                <section>Status</section>
-              </div>
-              <div className="tabs">
-                <h2>Job Title</h2>
-                <section>Description</section>
-                <section>Status</section>
-              </div>
-              <div className="tabs">
-                <h2>Job Title</h2>
-                <section>Description</section>
-                <section>Status</section>
-              </div>
-              <div className="tabs">
-                <h2>Job Title</h2>
-                <section>Description</section>
-                <section>Status</section>
-              </div>
             </Tab>
             <Tab eventKey="interviewed" title="Interviewed">
-              <div className="tabs">
-                <h2>Job Title</h2>
-                <section>Description</section>
-                <section>Status</section>
-              </div>
-              <div className="tabs">
-                <h2>Job Title</h2>
-                <section>Description</section>
-                <section>Status</section>
-              </div>
-              <div className="tabs">
-                <h2>Job Title</h2>
-                <section>Description</section>
-                <section>Status</section>
-              </div>
-              <div className="tabs">
-                <h2>Job Title</h2>
-                <section>Description</section>
-                <section>Status</section>
-              </div>
               <div className="tabs">
                 <h2>Job Title</h2>
                 <section>Description</section>
