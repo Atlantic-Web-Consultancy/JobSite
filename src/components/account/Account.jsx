@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { LinkContainer } from 'react-router-bootstrap';
 import NewEmployer from './NewEmployer.jsx';
 import NewJobSeeker from './NewJobSeeker.jsx';
-// import Parse from './Parse.js';
+import Parse from './Parse.js';
 
 class Account extends React.Component {
   constructor(props) {
@@ -29,6 +29,7 @@ class Account extends React.Component {
   }
 
   handleSubmit(view) {
+
     this.props.handleSubmit(view);
   }
 

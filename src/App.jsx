@@ -11,6 +11,7 @@ import SavedJobs from './components/savedJobs/SavedJobs.jsx';
 import ResumeSearchResults from './components/ResumeSearchResults/ResumeSearchResults.jsx';
 import NotesModule from './components/NotesModule/NotesModule.jsx';
 import EmployerUI from './components/employer/EmployerUI.jsx';
+import EmployersJobs from './components/sam/employersJobs.js';
 
 class App extends React.Component {
   constructor() {
@@ -18,7 +19,7 @@ class App extends React.Component {
 
     this.state = {
       navItemsEmployee: ['My Jobs', 'Login/Logout', 'JobListings'],
-      navItemsEmployer: ['Resumes', 'Login/Logout'],
+      navItemsEmployer: ['Resumes', 'Sam', 'Login/Logout'],
       navItemsLanding: ['Landing'],
       view: 'base',
       logIn: 'base',
@@ -133,6 +134,7 @@ class App extends React.Component {
                   />
                 )}
               />
+              <Route path="/sam" component={EmployersJobs} />
               <Route path="/resumes" component={ResumeSearchResults} />
               <Route path="/" component={EmployerUI} />
               <Route path="/home" component={EmployerUI} />

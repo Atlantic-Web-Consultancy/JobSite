@@ -5,7 +5,7 @@ const Parse = {
     try {
       const result = await fetch('/login', {
         method: 'POST',
-        body: JSON.stringify(credentials);
+        body: JSON.stringify(credentials)
       })
 
       if(response.ok) {
@@ -32,7 +32,7 @@ const Parse = {
     try {
       const result = await fetch('/createEmployer', {
         method: 'POST',
-        body: JSON.stringify(accountInfo);
+        body: JSON.stringify(accountInfo)
       })
 
       if(response.ok) {
@@ -47,7 +47,7 @@ const Parse = {
     try {
       const result = await fetch('/createSeeker', {
         method: 'POST',
-        body: JSON.stringify(accountInfo);
+        body: JSON.stringify(accountInfo)
       })
 
       if (response.ok) {

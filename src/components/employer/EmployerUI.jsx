@@ -6,7 +6,7 @@ import {
   cardButton,
 } from './EmployerCSS.js';
 
-class JobSeekerUI extends React.Component {
+class EmployerUI extends React.Component {
   constructor(props) {
     super(props);
 
@@ -27,4 +27,4 @@ class JobSeekerUI extends React.Component {
   }
 }
 
-export default JobSeekerUI;
+export default EmployerUI;
