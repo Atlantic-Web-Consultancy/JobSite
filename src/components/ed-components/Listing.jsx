@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 function Listing({job}) {
 
@@ -11,17 +12,21 @@ function Listing({job}) {
   return (
     <div id="listing-wrapper">
       <div id="first-row">
-        <span> {job.title} | {job.employment_type}</span>
+        <div id="jobTitle">
+          <span> {job.title} | {job.employment_type}</span>
+        </div>
         <br/>
-        <span> {(job.employer_id === null ? '' : `${job.employer_id} |`)}  {job.experience_level}</span>
+        <span>{job.type_work}</span>
         <br/>
-        <span> {`zip code: ${job.location}`} | {`Salary: ${job.salary}`}</span>
+        <span>Experience Required: {job.experience_level}</span>
+        <br/>
+        <span>{`Salary: $${job.salary}`}</span>
       </div>
       <div id="description-wrapper">
         {job.description}
-      </div>
       <br/>
-      <span>{humanDateFormat}</span>
+      <span style={{'font-size': '0.8em', 'font-style': 'italic'}}>{moment(humanDateFormat).fromNow()}</span>
+      </div>
     </div>
   )
 }
