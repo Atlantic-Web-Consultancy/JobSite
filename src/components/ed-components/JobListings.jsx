@@ -98,22 +98,13 @@ function JobListings() {
         header
       </div>
       <div id="tests">
-          <label style={{display: "none"}}>Search For Job</label>
+          {/* <label style={{display: "none"}}>Search For Job</label>
           <input id="job-listing-input" type="job" placeholder="Job Title or Keyword" name="job" value={job} onChange={handleChange}/>
           <br/>
           <label style={{display: "none"}}>Miles Away</label>
-            <input id="zipcode-listing-input" type="city" placeholder="Miles Away" name="zip" value={zip} onChange={handleChange}/>
+            <input id="zipcode-listing-input" type="city" placeholder="Miles Away" name="zip" value={zip} onChange={handleChange}/> */}
       </div>
       <div id="content">
-        <div id="listings">
-          <h2 style={{textAlign: "center"}}>Listings </h2>
-          <ul id="listings-ul">
-            {/* <Listing /> */}
-            {jobs.map((job, i) => {
-              return (<Listing key={i} job={job} />)
-            })}
-          </ul>
-        </div>
         <div id="filter-wrapper">
           <div id="checkboxes">
             <label>
@@ -132,25 +123,44 @@ function JobListings() {
                   type="checkbox"
                   checked={remote}
                   onChange={handleInputChange} />
-              </label>
+            </label>
           </div>
           <Form id="listing-sliders">
-              <Form.Group >
-                <Form.Label style={{position: "relative", top: "30px", left: "5%", textAlign: "center"}}>Salary Range</Form.Label>
-                <div id="slider-box">
-                  <Form.Label id="slider-labels">Min $ : {min}</Form.Label>
-                  <Form.Control id="formSlider-1" type="range" name="salaryMin" value={minSlider} onChange={handleChange}/>
-                </div>
-                <div id="slider-box">
-                  <Form.Label id="slider-labels">Max $ : {max}</Form.Label>
-                  <Form.Control id="formSlider-2" type="range" name="salaryMax" value={maxSlider} onChange={handleChange}/>
-                </div>
-              </Form.Group>
-              <Button id="slider-button" variant="primary" type="submit" onClick={handleSubmit}>
-                Apply Filters
-              </Button>
-            </Form>
+            <Form.Group style={{marginBottom: "1rem",
+    position: "relative",
+    top: "30"}}>
+              <Form.Label style={{position: "relative", top: "30px", left: "5%", textAlign: "center"}} />
+              <div id="slider-box">
+                <Form.Label id="slider-labels">Min $ : {min}</Form.Label>
+                <Form.Control id="formSlider-1" type="range" name="salaryMin" value={minSlider} onChange={handleChange}/>
+              </div>
+              <div id="slider-box">
+                <Form.Label id="slider-labels">Max $ : {max}</Form.Label>
+                <Form.Control id="formSlider-2" type="range" name="salaryMax" value={maxSlider} onChange={handleChange}/>
+              </div>
+            </Form.Group>
+            <Button id="slider-button" variant="primary" type="submit" onClick={handleSubmit}>
+              Apply Filters
+            </Button>
+          </Form>
+          <div>
+            <label style={{display: "none"}}>Search For Job</label>
+            <input id="job-listing-input" type="job" placeholder="Job Title or Keyword" name="job" value={job} onChange={handleChange}/>
+            <br/>
+            <label style={{display: "none"}}>Miles Away</label>
+            <input id="zipcode-listing-input" type="city" placeholder="Miles Away" name="zip" value={zip} onChange={handleChange}/>
+          </div>
         </div>
+        <div id="listings">
+          <h2 style={{textAlign: "center"}}>Listings </h2>
+          <ul id="listings-ul">
+            {/* <Listing /> */}
+            {jobs.map((job, i) => {
+              return (<Listing key={i} job={job} />)
+            })}
+          </ul>
+        </div>
+
       </div>
     </div>
   )

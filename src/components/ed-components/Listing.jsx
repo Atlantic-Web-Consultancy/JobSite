@@ -1,23 +1,23 @@
 import React from 'react';
 
-function Listing(props) {
+function Listing({job}) {
   () => {
     console.log('hello')
   }
   return (
     <div id="listing-wrapper">
       <div id="first-row">
-        <span> title | employement type</span>
+        <span> {job.title} | {job.employment_type}</span>
         <br/>
-        <span> employer | experience level</span>
+        <span> {(job.employer_id === null ? '' : `${job.employer_id} |`)}  {job.experience_level}</span>
         <br/>
-        <span> location | salary</span>
+        <span> {job.location} | {job.salary}</span>
       </div>
       <div id="description-wrapper">
-        description text
+        {job.description}
       </div>
       <br/>
-      <span>date posted</span>
+      <span>{job.date_posted}</span>
     </div>
   )
 }
