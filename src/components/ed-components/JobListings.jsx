@@ -8,7 +8,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 
 function JobListings() {
-  const [job, setJob] = useState('Job Title or Keyword');
+  const [job, setJob] = useState('');
   const [zip, setZip] = useState('');
   const [partTime, setPartTime] = useState(false);
   const [remote, setRemote] = useState(false);
@@ -80,7 +80,6 @@ function JobListings() {
       },
       data: reqData,
       success: (response) => {
-        console.log(response)
         setJobs(response)
       },
       error: (err) => {
@@ -118,7 +117,7 @@ function JobListings() {
               </div>
             </Form.Group>
             <Button id="slider-button" variant="primary" type="submit" onClick={handleSubmit}>
-              Apply Filters
+              Search
             </Button>
           </Form>
           <div>

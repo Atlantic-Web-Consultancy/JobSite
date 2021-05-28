@@ -6,15 +6,15 @@ function Listing({job}) {
   const dateNum = parseInt(job.date_posted, 10);
   const dateObject = new Date(dateNum);
   const humanDateFormat = dateObject.toLocaleString();
-  const testFunc = () => {
-    console.log('test',dateNum)
-  }
   return (
     <div id="listing-wrapper">
       <div id="first-row">
         <div id="jobTitle">
           <span> {job.title} | {job.employment_type}</span>
+          <br/>
         </div>
+        <span style={{'fontSize': '1.1em', 'fontStyle': 'italic', 'fontWeight': 'bold'}}> {job.organization}</span>
+        <br/>
         <br/>
         <span>{job.type_work}</span>
         <br/>
@@ -25,7 +25,7 @@ function Listing({job}) {
       <div id="description-wrapper">
         {job.description}
       <br/>
-      <span style={{'font-size': '0.8em', 'font-style': 'italic'}}>{moment(humanDateFormat).fromNow()}</span>
+      <span style={{'fontSize': '0.8em', 'fontStyle': 'italic'}}>{moment(humanDateFormat).fromNow()}</span>
       </div>
     </div>
   )
