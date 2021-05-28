@@ -136,7 +136,7 @@ class App extends React.Component {
             {this.showNotes()}
             <Switch>
               <Route
-                path="/login/logout"
+                path="/login"
                 render={() => (
                   <Account
                     handleSubmit={this.handleSubmit}
@@ -148,7 +148,7 @@ class App extends React.Component {
                 )}
               />
               <Route path="/resumes" component={ResumeSearchResults} />
-              <Route path="/" component={EmployerUI} />
+              <Route path="/" component={ResumeSearchResults} />
               <Route path="/home" component={EmployerUI} />
             </Switch>
           </Router>

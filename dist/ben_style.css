@@ -99,3 +99,15 @@
 .notesFooter {
   background-color: black;
 }
+
+#resumeTitle {
+  display: flex;
+  position: absolute;
+  align-self: center;
+  justify-content: center;
+  z-index: 1;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  font-size: 70px;
+}
