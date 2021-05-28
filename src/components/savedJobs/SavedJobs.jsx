@@ -6,10 +6,7 @@ import Parse from './Parse.js';
 
 const SavedJobs = props => {
   const [key, setKey] = useState('saved');
-
-  useEffect(() => {
-    Parse.getApps(filterApps);
-  })
+  Parse.login((data) => console.log(data));
 
   const filterApps = (apps) => {
     console.log(apps);
