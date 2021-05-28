@@ -39,39 +39,27 @@ class Calendar extends React.Component {
   }
 
   handleChange = e => {
-    e.preventDefault();
     console.log(e.target.name, e.target.value)
     this.setState({
       [e.target.name]: e.target.value,
     });
   }
 
-  submitEvent = () => {
-    let { eventTitle, eventDetails } = this.state;
+  handleDateSelect = selectInfo => {
+    let title = prompt('Please enter a new title for your event')
     let calendarApi = selectInfo.view.calendar
 
     calendarApi.unselect() // clear date selection
 
-
-    if (this.state.eventTitle && this.state.eventDetails) {
+    if (title) {
       calendarApi.addEvent({
         id: createEventId(),
-        eventTitle,
-        eventDetails,
+        title,
         start: selectInfo.startStr,
         end: selectInfo.endStr,
         allDay: selectInfo.allDay
       })
     }
-  }
-
-  handleDateSelect = (selectInfo) => {
-    let eventDates = this.state.eventDates;
-    eventDates.push(selectInfo);
-    this.setState({
-      eventDates: eventDates,
-    })
-    this.retreiveEventInfo();
   }
 
   render() {
@@ -105,41 +93,6 @@ class Calendar extends React.Component {
         background-color: #000;
       }
     `;
-    if (this.state.popUp) {
-      return (
-        <StyleWrapper>
-
-          <div id="calendar-container">
-            <FullCalendar
-              plugins={[dayGridPlugin, interactionPlugin]}
-              select={this.handleDateSelect}
-              eventContent={this.renderEventContent}
-              editable={true}
-              selectable={true}
-            />
-          </div>
-            <div className="eventInfo">
-              <h3>Create Event</h3>
-              <input
-                className="event-inputs"
-                type="text"
-                name="eventTitle"
-                value={eventTitle}
-                onChange={this.handleChange}
-              />
-              <input
-                className="event-inputs"
-                type="text-area"
-                name="eventDetails"
-                rows={10}
-                value={eventDetails}
-                onChange={this.handleChange}
-              ></input>
-              <button type="button" className="submit-btn" onClick={() => this.submitEvent()}></button>
-            </div>
-        </StyleWrapper>
-      )
-    }
     return (
       <StyleWrapper>
 

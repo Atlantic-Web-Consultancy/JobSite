@@ -1,13 +1,16 @@
 const Parse = {
-  getApps = async(callback) => {
-    try {
-      const result = await fetch('/seekers/applications');
+  url: 'http://3.137.145.92',
 
-      if (response.ok) {
-        callback(null, result);
-      }
+  getApps: async(callback) => {
+    try {
+      const result = await fetch(`${Parse.url}/seekers/applications`);
+
+      callback(result);
+
     } catch (err) {
       callback(err)
     }
   }
 }
+
+export default Parse;

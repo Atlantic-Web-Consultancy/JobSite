@@ -33,26 +33,26 @@ class NewJobSeeker extends React.Component {
     const newSeeker = this.state;
     newSeeker.dob = Date.parse(newSeeker.dob);
     newSeeker.zip = +newSeeker.zip;
-    console.log(newSeeker);
     Parse.createJobSeeker(newSeeker, this.successfulCreation);
   }
 
   successfulCreation = (response) => {
     if (response) {
-      console.log(response)
+      console.log('response', response)
     } else {
-      console.log('hooray');
+      this.state = this.initialState;
+      this.changeView('employee');
     }
+  }
+
+  changeView = view => {
+    this.props.changeView(view);
   }
 
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value,
     })
-  }
-
-  changeView = view => {
-    this.props.changeView(view);
   }
 
   render() {

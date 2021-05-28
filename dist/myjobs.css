@@ -2,6 +2,12 @@
   position: relative;
   top: 8rem;
   padding: 5px 30px;
+  height: 90%;
+  margin-bottom: 10%;
+}
+
+.tab-content {
+  height: 80%;
   overflow-y: scroll;
 }
 

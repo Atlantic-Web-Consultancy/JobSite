@@ -1,15 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 import TopNav from '../topNav/TopNav.jsx';
+import Parse from './Parse.js';
 
 const SavedJobs = props => {
   const [key, setKey] = useState('saved');
 
+  useEffect(() => {
+    Parse.getApps(filterApps);
+  })
+
+  const filterApps = (apps) => {
+    console.log(apps);
+  }
+
   return (
     <div>
       <div id="tabs">
-        <Tabs
+        <Tabs id="tab-content"
           activeKey={key}
           onSelect={(k) => setKey(k)}
         >
