@@ -17,8 +17,8 @@ class App extends React.Component {
     super();
 
     this.state = {
-      navItemsEmployee: ['My Jobs', 'Login/Logout', 'JobListings'],
-      navItemsEmployer: ['Resumes', 'Login/Logout'],
+      navItemsEmployee: ['My Jobs', 'Login', 'JobListings'],
+      navItemsEmployer: ['Resumes', 'Login'],
       navItemsLanding: ['Landing'],
       view: 'base',
       logIn: 'base',

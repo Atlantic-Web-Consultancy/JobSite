@@ -3,7 +3,7 @@ const Parse = {
 
   login: async (credentials, callback) => {
     try {
-      const result = await fetch(`${url}/login`, {
+      const result = await fetch(`${Parse.url}/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
@@ -11,9 +11,8 @@ const Parse = {
         body: JSON.stringify(credentials)
       })
 
-      if(response.ok) {
-        callback(null);
-      }
+      callback(null);
+
     } catch(err) {
       callback(err);
     }
@@ -21,7 +20,7 @@ const Parse = {
 
   logout: async (credentials, callback) => {
     try {
-      const result = await fetch(`${url}/logout`);
+      const result = await fetch(`${Parse.url}/logout`);
 
       if (response.ok) {
         callback(null);
@@ -33,7 +32,7 @@ const Parse = {
 
   createEmployer: async(accountInfo, callback) => {
     try {
-      const result = await fetch(`${url}/createEmployer`, {
+      const result = await fetch(`${Parse.url}/createEmployer`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
@@ -59,9 +58,8 @@ const Parse = {
         body: JSON.stringify(accountInfo)
       })
 
-      if (Response.ok) {
-        callback(null)
-      }
+      callback(null);
+
     } catch (err) {
       callback(err);
     }
