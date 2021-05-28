@@ -19,7 +19,7 @@ const Parse = {
   login: (callback) => {
     $.ajax({
       method: 'GET',
-      url: 'http://localhost:3000/seekers/applications',
+      url: '/seekers/applications',
       crossDomain: true,
       xhrFields: {
         withCredentials: true

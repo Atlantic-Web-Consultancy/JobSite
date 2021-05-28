@@ -49,7 +49,7 @@ class Account extends React.Component {
     // Parse.login(login, this.loginResponse);
     $.ajax({
       method: 'POST',
-      url: 'http://localhost:3000/login',
+      url: '/login',
       data: loginCredentials,
       xhrFields: {
         withCredentials: true

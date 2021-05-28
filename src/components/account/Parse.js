@@ -4,7 +4,7 @@ const Parse = {
   login: (credentials, callback) => {
     $.ajax({
       method: 'POST',
-      url: 'http://localhost:3000/login',
+      url: '/login',
       data: credentials,
       crossDomain: true,
       xhrFields: {

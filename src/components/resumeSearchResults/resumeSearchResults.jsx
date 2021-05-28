@@ -19,7 +19,7 @@ class ResumeSearchResults extends React.Component {
 
   componentDidMount() {
     $.ajax({
-      url: "http://localhost:3000/employers/jobpostings",
+      url: "/employers/jobpostings",
       type: "get",
       crossDomain: true,
       success: (response) => {
