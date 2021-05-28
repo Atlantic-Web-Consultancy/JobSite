@@ -18,10 +18,10 @@ class App extends React.Component {
 
     this.state = {
       navItemsEmployee: ['My Jobs', 'Login/Logout', 'JobListings'],
-      navItemsEmployer: ['Candidates', 'Login/Logout'],
+      navItemsEmployer: ['Resumes', 'Login/Logout'],
       navItemsLanding: ['Landing'],
-      view: 'none',
-      logIn: 'employee',
+      view: 'base',
+      logIn: 'base',
       displayNotes: false,
     };
 
@@ -32,21 +32,24 @@ class App extends React.Component {
     this.showNotes = this.showNotes.bind(this);
   }
 
-  handleSubmit(loggedIn) {
+  handleSubmit(view) {
+    console.log(view)
     this.setState({
-      loggedIn,
+      view: view,
+      logIn: view,
     });
   }
 
   changeView(view) {
     this.setState({
       view,
+      logIn: view,
     });
   }
 
-  changeAccountView(view) {
+  changeAccountView(logIn) {
     this.setState({
-      logIn: view,
+      logIn,
     });
   }
 
@@ -76,7 +79,7 @@ class App extends React.Component {
       logIn,
     } = this.state;
 
-    if (view === 'none') {
+    if (view === 'base') {
       return (
         <React.StrictMode>
           <Router>
@@ -108,45 +111,68 @@ class App extends React.Component {
           </Router>
         </React.StrictMode>
       );
-    } if (view === 'employee') {
+    } if (view === 'employer') {
       return (
-        <div>
-          <React.StrictMode>
-            <Router>
-              <TopNav
-                navItems={navItemsEmployee}
-                changeNotesView={this.changeNotesView}
+        <React.StrictMode>
+          <Router>
+            <TopNav
+              navItems={navItemsEmployer}
+              changeNotesView={this.changeNotesView}
+            />
+            {this.showNotes()}
+            <Switch>
+              <Route
+                path="/login/logout"
+                render={() => (
+                  <Account
+                    handleSubmit={this.handleSubmit}
+                    logIn={logIn}
+                    isAuthed={true}
+                    changeAccountView={this.changeAccountView}
+                    changeView={this.changeView}
+                  />
+                )}
               />
-              {this.showNotes()}
-              <Switch>
-                <Route
-                  path="/login/logout"
-                  render={() => (
-                    <Account
-                      handleSubmit={this.handleSubmit}
-                      loggedIn={logIn}
-                      isAuthed={true}
-                      changeAccountView={this.changeAccountView}
-                      changeView={this.changeView}
-                    />
-                  )}
-                />
-                <Route path="/myjobs" component={SavedJobs} />
-                <Route path="/joblistings" component={JobListings} />
-                <Route path="/" component={JobSeekerUI} />
-                <Route exact path="/home" component={JobSeekerUI} />
-              </Switch>
-            </Router>
-          </React.StrictMode>
-        </div>
+              <Route path="/resumes" component={ResumeSearchResults} />
+              <Route path="/" component={EmployerUI} />
+              <Route path="/home" component={EmployerUI} />
+            </Switch>
+          </Router>
+        </React.StrictMode>
       );
     }
     return (
-      <div />
+      <div>
+        <React.StrictMode>
+          <Router>
+            <TopNav
+              navItems={navItemsEmployee}
+              changeNotesView={this.changeNotesView}
+            />
+            {this.showNotes()}
+            <Switch>
+              <Route
+                path="/login/logout"
+                render={() => (
+                  <Account
+                    handleSubmit={this.handleSubmit}
+                    logIn={logIn}
+                    isAuthed={true}
+                    changeAccountView={this.changeAccountView}
+                    changeView={this.changeView}
+                  />
+                )}
+              />
+              <Route path="/myjobs" component={SavedJobs} />
+              <Route path="/joblistings" component={JobListings} />
+              <Route path="/" component={JobSeekerUI} />
+              <Route exact path="/home" component={JobSeekerUI} />
+            </Switch>
+          </Router>
+        </React.StrictMode>
+      </div>
     );
   }
 }
 
 export default App;
-
-    {/*landing dropdown login/logout, btns employer & employee */}
