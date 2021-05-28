@@ -39,6 +39,7 @@ class Calendar extends React.Component {
   }
 
   handleChange = e => {
+    e.preventDefault();
     console.log(e.target.name, e.target.value)
     this.setState({
       [e.target.name]: e.target.value,
@@ -110,7 +111,6 @@ class Calendar extends React.Component {
 
           <div id="calendar-container">
             <FullCalendar
-              // defaultView="dayGridMonth"
               plugins={[dayGridPlugin, interactionPlugin]}
               select={this.handleDateSelect}
               eventContent={this.renderEventContent}
