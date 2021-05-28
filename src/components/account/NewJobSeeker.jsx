@@ -2,6 +2,7 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { LinkContainer } from 'react-router-bootstrap';
+import Parse from './Parse.js';
 
 class NewJobSeeker extends React.Component {
   constructor(props) {
@@ -23,9 +24,28 @@ class NewJobSeeker extends React.Component {
       gender: '',
       password: '',
     }
+
+    this.initialState = this.state;
   }
 
-  handleChange = (e) => {
+  handleSubmit = e => {
+    e.preventDefault();
+    const newSeeker = this.state;
+    newSeeker.dob = Date.parse(newSeeker.dob);
+    newSeeker.zip = +newSeeker.zip;
+    console.log(newSeeker);
+    Parse.createJobSeeker(newSeeker, this.successfulCreation);
+  }
+
+  successfulCreation = (response) => {
+    if (response) {
+      console.log(response)
+    } else {
+      console.log('hooray');
+    }
+  }
+
+  handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value,
     })
@@ -56,7 +76,7 @@ class NewJobSeeker extends React.Component {
 
     return (
       <div className="account">
-        <Form>
+        <Form onSubmit={this.handleSubmit}>
           <Form.Group>
             <Form.Label>Username</Form.Label>
             <Form.Control
@@ -142,7 +162,7 @@ class NewJobSeeker extends React.Component {
             <Form.Control
               onChange={this.handleChange}
               value={country}
-              type="number"
+              type="text"
               placeholder="Enter country"
               name="country"
             />
@@ -191,10 +211,10 @@ class NewJobSeeker extends React.Component {
           </Form.Group>
           <Form.Group controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Enter a password" />
+            <Form.Control onChange={this.handleChange} value={password} name="password" type="password" placeholder="Enter a password" />
           </Form.Group>
           <LinkContainer to="/">
-            <Button onClick={() => this.changeView('employee')} variant="primary" type="button" className="submit-btn">
+            <Button onClick={this.handleSubmit} variant="primary" type="submit" className="submit-btn">
               Submit
             </Button>
           </LinkContainer>

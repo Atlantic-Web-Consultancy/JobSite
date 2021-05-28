@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Atlantic-Web-Consultancy/JobSite#readme",
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "@fullcalendar/core": "^5.7.0",
     "@fullcalendar/daygrid": "^5.7.0",
     "@fullcalendar/interaction": "^5.7.0",
