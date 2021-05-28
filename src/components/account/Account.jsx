@@ -29,7 +29,17 @@ class Account extends React.Component {
   }
 
   handleSubmit(view) {
-
+    const credentials = {
+      username: this.state.username,
+      password: this.state.password
+    }
+    Parse.login(credentials, (err, req) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('req', req);
+      }
+    });
     this.props.handleSubmit(view);
   }
 
