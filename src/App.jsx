@@ -12,13 +12,15 @@ import ResumeSearchResults from './components/ResumeSearchResults/ResumeSearchRe
 import NotesModule from './components/NotesModule/NotesModule.jsx';
 import EmployerUI from './components/employer/EmployerUI.jsx';
 import CalendarView from './components/calendar/CalendarView.jsx';
+import Blog from './components/blog/Blog.jsx';
+
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      navItemsEmployee: ['My Jobs', 'Login', 'JobListings'],
+      navItemsEmployee: ['My Jobs', 'Job Listings', 'Blog', 'Login'],
       navItemsEmployer: ['Resumes', 'Login'],
       navItemsLanding: ['Landing'],
       view: 'base',
@@ -167,6 +169,7 @@ class App extends React.Component {
             <CalendarView toggleCal={this.toggleCal} display={this.state.displayCal} />
             {this.showNotes()}
             <Switch>
+              <Route path="/blog" component={Blog} />
               <Route
                 path="/login"
                 render={() => (
