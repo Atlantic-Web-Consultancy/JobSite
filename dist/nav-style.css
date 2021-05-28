@@ -11,7 +11,7 @@ body {
 }
 
 #nav-logo {
-  color: #00C805;
+  color: #1cd100;
   font-size: 1.4em;
 }
 
@@ -24,7 +24,7 @@ body {
   background-color: #000!important;
   border-radius: 10%;
   border: 1px solid #fff;
-  color: #fff!important;
+  color: #1cd100!important;
   padding: 20% 40%!important;
   z-index: 800;
 }
@@ -51,7 +51,7 @@ body {
 
 .dropdown-item:hover {
   color:#00C805!important;
-  background-color: #fff;
+  background-color: black;
 }
 
 .dropdown-item:active, .dropdown-item.active {
