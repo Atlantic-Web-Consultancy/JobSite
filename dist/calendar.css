@@ -25,3 +25,25 @@
   opacity: .7;
   z-index: 800;
 }
+
+.eventInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  position: absolute;
+  top: 17%;
+  left: 25%;
+  width: 50%;
+  height: 65%;
+  background-color: #000;
+  z-index: 1200;
+}
+
+.event-inputs {
+  background-color: #000;
+  border: 1px solid #fff;
+  margin: 5% 0;
+  color: #fff;
+}
