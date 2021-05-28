@@ -11,12 +11,18 @@ class Blog extends React.Component {
     this.getBlogPosts = this.getBlogPosts.bind(this);
   }
 
+  componentDidMount() {
+    this.getBlogPosts();
+  }
+
   getBlogPosts() {
     $.ajax({
       url: 'http://3.137.145.92/blog',
       method: 'GET',
       success: (data) => {
-        console.log(data);
+        this.setState({
+          blogs: data,
+        })
       },
       error: (err) => {
         console.log(err);
@@ -25,6 +31,7 @@ class Blog extends React.Component {
   }
 
   render() {
+    const { blogs } = this.state;
     return (
       <div id="blogBG">
         <div id="blog-header">
@@ -33,15 +40,19 @@ class Blog extends React.Component {
           <span id="logoBlog">Blog</span>
         </div>
         <br />
+
+        {blogs.map((post) => {
+          const date = new Date(parseInt(post.date_posted)).toLocaleString();
+        return (
         <div id="blog-post">
-        <button onClick={() => {this.getBlogPosts()}}> GET BLOG POSTS</button>
-          <h1 className="blogpost-h1">What is Lorem Ipsum?</h1>
-          <img className="blogImg" src="https://picsum.photos/650/300"/>
-          <br />
-          <div className="blogpost-author">I ain't write this</div>
-          <i className="blog-post-date">{new Date().toLocaleString()}</i>
-          <div className="blog-post-body"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div>
-        </div>
+            <h1 className="blogpost-h1">{post.title}</h1>
+            <img className="blogImg" src="https://picsum.photos/650/300"/>
+            <br />
+            <div className="blogpost-author">{`${post.first_name} ${post.last_name}`}</div>
+            <i className="blog-post-date">{date}</i>
+            <div className="blog-post-body"><p>{post.content}</p></div>
+          </div>
+        )})}
       </div>
     )}
 }
