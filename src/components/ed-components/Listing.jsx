@@ -7,33 +7,17 @@ function Listing({job}) {
   const dateObject = new Date(dateNum);
   const humanDateFormat = dateObject.toLocaleString();
   return (
-    <div>
     <div className="tabs">
       <h2>{job.title} | {job.employment_type}</h2>
       <section>{job.organization}</section>
       <section>{job.description}</section>
-    </div>
-    <div id="listing-wrapper">
-      <div id="first-row">
-        <div id="jobTitle">
-          <span> {job.title} | {job.employment_type}</span>
-          <br/>
-        </div>
-        <span style={{'fontSize': '1.1em', 'fontStyle': 'italic', 'fontWeight': 'bold'}}> {job.organization}</span>
-        <br/>
-        <br/>
-        <span>{job.type_work}</span>
-        <br/>
-        <span>Experience Required: {job.experience_level}</span>
-        <br/>
-        <span>{`Salary: $${job.salary}`}</span>
-      </div>
-      <div id="description-wrapper">
-        {job.description}
-      <br/>
-      <span style={{'fontSize': '0.8em', 'fontStyle': 'italic'}}>{moment(humanDateFormat).fromNow()}</span>
-      </div>
-    </div>
+      <br />
+      <section>Type of Work: {job.type_work}</section>
+      <section>Experience Required: {job.experience_level}</section>
+      <br />
+      <section>Salary: ${job.salary}</section>
+      <br />
+      <div id="applyButton">Apply Today!</div>
     </div>
   )
 }

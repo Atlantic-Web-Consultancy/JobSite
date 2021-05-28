@@ -148,5 +148,19 @@
   font-weight: bold;
   font-size: 1.5em;
   color: #367e38;
+}
 
+#applyButton {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+#applyButton:hover {
+  cursor: pointer;
 }

@@ -129,7 +129,7 @@ function JobListings() {
           </div>
         </div>
         <div id="listings">
-          <h2 style={{textAlign: "center"}}>Listings </h2>
+          <h1 style={{textAlign: "center"}}>Listings </h1>
           <ul id="listings-ul">
             {/* <Listing /> */}
             {jobs.map((job, i) => {
