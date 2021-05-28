@@ -7,6 +7,12 @@ function Listing({job}) {
   const dateObject = new Date(dateNum);
   const humanDateFormat = dateObject.toLocaleString();
   return (
+    <div>
+    <div className="tabs">
+      <h2>{job.title} | {job.employment_type}</h2>
+      <section>{job.organization}</section>
+      <section>{job.description}</section>
+    </div>
     <div id="listing-wrapper">
       <div id="first-row">
         <div id="jobTitle">
@@ -27,6 +33,7 @@ function Listing({job}) {
       <br/>
       <span style={{'fontSize': '0.8em', 'fontStyle': 'italic'}}>{moment(humanDateFormat).fromNow()}</span>
       </div>
+    </div>
     </div>
   )
 }
