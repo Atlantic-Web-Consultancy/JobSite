@@ -7,36 +7,68 @@
   width: 100vw;
   padding-right: 0;
   padding-left: 0;
-  background-color: #f7f7f7;
+  background-color: white;
   color: white;
 }
 
-#listing-search-input {
+/* #listing-search-input {
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
+  position: relative;
   border: 2px solid black;
+} */
+
+#job-listing-input {
+  background: black;
+  border: none;
+  border-bottom: 2px solid black;
+  border-radius: 4px;
+  color: white;
+  height: 50;
+  max-width: 90%;
+  font-size: 40;
+  position: relative;
+  top: 120;
+  right: 60;
+}
+
+#zipcode-listing-input {
+  background: black;
+  border: none;
+  border-bottom: 2px solid black;
+  border-radius: 4px;
+  color: white;
+  height: 50;
+  width: 50%;
+  font-size: 40;
+  position: relative;
+  top: 70;
+  left: 240;
 }
 
 #listing-header {
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 1;
-  grid-row-end: 3;
-  background-color: #f7f7f7;
+  grid-row-end: 2;
+  background-color: black;
 }
 
 #content {
   grid-column-start: 1;
   grid-column-end: 3;
-  grid-row-start: 3;
+  grid-row-start: 2;
   grid-row-end: 4;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   grid-template-columns: repeat(2, 1fr);
   align-items: stretch;
   justify-items: center;
-  background-color: #f7f7f7;
+  background-color: white;
+  position:relative;
+  left: 100;
 }
 
 #listings {
@@ -46,41 +78,49 @@
   grid-row-end: 4;
   border: 5px solid black;
   width: 90%;
-  background: green;
+  background:green;
   row-gap: 20px;
+  overflow-y: scroll;
+  height: 800;
 }
 
 #filter-wrapper {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
-  grid-row-end: 4;
+  grid-row-end: 3;
   border: 5px solid black;
+  height: 20%;
   width: 90%;
   background: green;
   text-align: center;
-  display: block;
+  display: flex;
+  flex-direction: row;
   position: relative;
-
+  padding: 20;
 }
 
 #checkboxes {
   position: relative;
-  top: 15px;
-  left: 10px;
+  text-align: left;
+}
+
+#listing-sliders {
+  margin-bottom: 1rem;
+  position: relative;
+  top: 30;
+  right: 200;
 }
 
 #income-1 {
   width: 80%;
   position: relative;
-  top: 5%;
-  left: 8%;
 }
 
 #income-2 {
   width: 80%;
   position: relative;
-  top: 5%;
+
 }
 
 #listing {
@@ -97,20 +137,29 @@
 #slider-box {
   position: relative;
   text-align: left;
-  top: 10px;
 }
 
 #slider-labels {
   position: relative;
-  top: 15px;
-  left: 10px;
 }
 
-#formSlider {
+#formSlider-1 {
   height: 1rem;
   color: green;
   width: 50%;
   position: relative;
-  top: 10px;
-  left: 10px;
+}
+
+#formSlider-2 {
+  height: 1rem;
+  color: green;
+  width: 50%;
+  position: relative;
+}
+
+#slider-button {
+  border: 2px solid black;
+  position: relative;
+  bottom: 50;
+  left: 900;
 }
