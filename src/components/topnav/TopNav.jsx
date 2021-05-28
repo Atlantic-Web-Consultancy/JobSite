@@ -4,18 +4,16 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { LinkContainer } from 'react-router-bootstrap';
-import CalendarView from '../calendar/CalendarView.jsx';
 
 const TopNav = props => {
-  const [display, setDisplay] = useState(false);
-
-  const toggleCal = (toggleVal) => {
-    setDisplay(toggleVal);
-  };
 
   const changeNotesView = (view) => {
     props.changeNotesView(view);
   };
+
+  const toggleCal = toggleVal => {
+    props.toggleCal(toggleVal)
+  }
 
   if (props.navItems.includes('Landing')) {
     return (
@@ -62,7 +60,6 @@ const TopNav = props => {
           </Dropdown.Menu>
         </Dropdown>
       </Navbar>
-      <CalendarView toggleCal={toggleCal} display={display} />
     </div>
   );
 };

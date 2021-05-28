@@ -11,10 +11,11 @@ import SavedJobs from './components/savedJobs/SavedJobs.jsx';
 import ResumeSearchResults from './components/ResumeSearchResults/ResumeSearchResults.jsx';
 import NotesModule from './components/NotesModule/NotesModule.jsx';
 import EmployerUI from './components/employer/EmployerUI.jsx';
+import CalendarView from './components/calendar/CalendarView.jsx';
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       navItemsEmployee: ['My Jobs', 'Login', 'JobListings'],
@@ -23,6 +24,7 @@ class App extends React.Component {
       view: 'base',
       logIn: 'base',
       displayNotes: false,
+      displayCal: false,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,6 +32,7 @@ class App extends React.Component {
     this.changeAccountView = this.changeAccountView.bind(this);
     this.changeNotesView = this.changeNotesView.bind(this);
     this.showNotes = this.showNotes.bind(this);
+    this.toggleCal = this.toggleCal.bind(this);
   }
 
   handleSubmit(view) {
@@ -70,6 +73,12 @@ class App extends React.Component {
     }
   }
 
+  toggleCal(displayCal) {
+    this.setState({
+      displayCal,
+    })
+  };
+
   render() {
     const {
       navItemsEmployee,
@@ -83,7 +92,10 @@ class App extends React.Component {
       return (
         <React.StrictMode>
           <Router>
-            <TopNav navItems={navItemsLanding} />
+            <TopNav
+              toggleCal={this.toggleCal}
+              navItems={navItemsLanding}
+            />
             <Switch>
               <Route
                 path="/login/logout"
@@ -118,7 +130,9 @@ class App extends React.Component {
             <TopNav
               navItems={navItemsEmployer}
               changeNotesView={this.changeNotesView}
+              toggleCal={this.toggleCal}
             />
+            <CalendarView toggleCal={this.toggleCal} display={this.state.displayCal} />
             {this.showNotes()}
             <Switch>
               <Route
@@ -148,7 +162,9 @@ class App extends React.Component {
             <TopNav
               navItems={navItemsEmployee}
               changeNotesView={this.changeNotesView}
+              toggleCal={this.toggleCal}
             />
+            <CalendarView toggleCal={this.toggleCal} display={this.state.displayCal} />
             {this.showNotes()}
             <Switch>
               <Route
@@ -165,8 +181,16 @@ class App extends React.Component {
               />
               <Route path="/myjobs" component={SavedJobs} />
               <Route path="/joblistings" component={JobListings} />
-              <Route path="/" component={JobSeekerUI} />
-              <Route exact path="/home" component={JobSeekerUI} />
+              <Route path="/"
+                render={() => (
+                  <JobSeekerUI toggleCal={this.toggleCal} />
+                )}
+               />
+              <Route path="/home"
+                render={() => (
+                  <JobSeekerUI toggleCal={this.toggleCal} />
+                )}
+              />
             </Switch>
           </Router>
         </React.StrictMode>

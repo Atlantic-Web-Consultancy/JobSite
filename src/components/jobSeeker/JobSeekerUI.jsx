@@ -14,6 +14,12 @@ class JobSeekerUI extends React.Component {
     super(props);
 
     this.state = {};
+
+    this.toggleCal = this.toggleCal.bind(this);
+  }
+
+  toggleCal(toggleVal) {
+    this.props.toggleCal(toggleVal);
   }
 
   render() {
@@ -55,7 +61,7 @@ class JobSeekerUI extends React.Component {
               <Card.Text style={cardText}>
                 See the next scheduled event here.
               </Card.Text>
-              <Button className="green-btn" variant="primary" style={cardButton} size="lg">Calendar</Button>
+              <Button onClick={() => this.toggleCal(true)} className="green-btn" variant="primary" style={cardButton} size="lg">Calendar</Button>
             </Card.Body>
           </Card>
 
