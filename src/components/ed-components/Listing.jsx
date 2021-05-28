@@ -1,6 +1,9 @@
 import React from 'react';
 
 function Listing(props) {
+  () => {
+    console.log('hello')
+  }
   return (
     <div id="listing-wrapper">
       <div id="first-row">

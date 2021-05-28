@@ -16,6 +16,7 @@ function JobListings() {
   const [maxSlider, setSalaryMax] = useState('');
   const [min, setMinSalary] = useState(0);
   const [max, setMaxSalary] = useState(0);
+  const [jobs, setJobs] = useState([]);
 
   const handleChange = () => {
     if (event.target.name === 'job') {
@@ -65,18 +66,25 @@ function JobListings() {
     } else {
       var remote = 'Onsite'
     }
+
     $.ajax({
-      url: "3.137.145.92/jobs",
+      url: "http://3.137.145.92/jobs",
       type: "get",
+      crossDomain: true,
+      headers: {
+        "Content-Type": "application/json"
+      },
       data: {
         employmentTitle: job,
         employmentType,
         remote,
+        distance: zip,
         salaryMin: min,
         salaryMax: max,
       },
       success: (response) => {
         console.log(response)
+        setJobs(response)
       },
       error: (err) => {
         console.log(err)
@@ -91,17 +99,19 @@ function JobListings() {
       </div>
       <div id="tests">
           <label style={{display: "none"}}>Search For Job</label>
-          <input id="job-listing-input" type="job" placeholder="Job Title or Keyword" name="job" value={job} onChange={handleChange} />
+          <input id="job-listing-input" type="job" placeholder="Job Title or Keyword" name="job" value={job} onChange={handleChange}/>
           <br/>
-          <label style={{display: "none"}}>City / Zip Code</label>
-            <input id="zipcode-listing-input" type="city" placeholder="City / Zip" name="zip" value={zip} onChange={handleChange}/>
-            <button>Search</button>
+          <label style={{display: "none"}}>Miles Away</label>
+            <input id="zipcode-listing-input" type="city" placeholder="Miles Away" name="zip" value={zip} onChange={handleChange}/>
       </div>
       <div id="content">
         <div id="listings">
           <h2 style={{textAlign: "center"}}>Listings </h2>
           <ul id="listings-ul">
-            <Listing />
+            {/* <Listing /> */}
+            {jobs.map((job, i) => {
+              return (<Listing key={i} job={job} />)
+            })}
           </ul>
         </div>
         <div id="filter-wrapper">
@@ -137,7 +147,7 @@ function JobListings() {
                 </div>
               </Form.Group>
               <Button id="slider-button" variant="primary" type="submit" onClick={handleSubmit}>
-                Submit
+                Apply Filters
               </Button>
             </Form>
         </div>

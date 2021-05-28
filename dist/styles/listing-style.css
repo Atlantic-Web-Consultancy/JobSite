@@ -84,6 +84,8 @@
   width: 90%;
   background:green;
   row-gap: 20px;
+  overflow-y: scroll;
+  height: 800;
 }
 
 #filter-wrapper {
