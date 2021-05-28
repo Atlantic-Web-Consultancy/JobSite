@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { LinkContainer } from 'react-router-bootstrap';
 import NewEmployer from './NewEmployer.jsx';
 import NewJobSeeker from './NewJobSeeker.jsx';
-// import Parse from './Parse.js';
+import Parse from './Parse.js';
 
 class Account extends React.Component {
   constructor(props) {
@@ -13,8 +13,10 @@ class Account extends React.Component {
     this.state = {
       username: '',
       password: '',
+      currentView: '',
     };
 
+    this.initialState = this.state;
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.changeAccountView = this.changeAccountView.bind(this);
@@ -30,6 +32,23 @@ class Account extends React.Component {
 
   handleSubmit(view) {
     this.props.handleSubmit(view);
+  }
+
+  submitEmployee = () => {
+    let login = this.state;
+    this.setState({
+      currentView: 'employee',
+    })
+    Parse.login(login, this.loginResponse);
+  }
+
+  loginResponse = (response) => {
+    if (response === null) {
+      console.log('response', response);
+    } else {
+      this.state = this.initialState;
+      this.props.handleSubmit(this.state.currentView);
+    }
   }
 
   changeView(view) {
@@ -53,7 +72,7 @@ class Account extends React.Component {
     if (this.props.logIn === 'employee' || this.props.logIn === 'base') {
       return (
         <div className="account employee">
-          <Form.Group>
+          <Form.Group onSubmit={this.submitEmployee}>
             <Form.Label>Username</Form.Label>
             <Form.Control name="username" value={username} onChange={this.handleChange} type="text" placeholder="Enter Username" />
           </Form.Group>
@@ -63,12 +82,12 @@ class Account extends React.Component {
           </Form.Group>
           <Form.Group>
             <LinkContainer to="/">
-              <Button onClick={() => this.handleSubmit('employee')} style={{ marginTop: '15px' }} className="submit-btn" type="button">Log In</Button>
+              <Button onClick={this.submitEmployee} style={{ marginTop: '15px' }} className="submit-btn" type="submit">Log In</Button>
             </LinkContainer>
           </Form.Group>
           <Form.Group>
             <Form.Label>New Here? Make an account</Form.Label>
-            <Button onClick={() => this.changeAccountView('newEmployee')} className="submit-btn">Make Account</Button>
+            <Button onClick={() => this.handleSubmit('newEmployee')} className="submit-btn">Make Account</Button>
           </Form.Group>
         </div>
       );

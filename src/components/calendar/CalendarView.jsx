@@ -14,7 +14,7 @@ const CalendarView = props => {
       </div>
     );
   }
-  return <div />;
+  return <div className="none" />;
 };
 
 export default CalendarView;
