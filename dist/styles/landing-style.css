@@ -46,25 +46,25 @@
 #seeker-h1 {
   text-align: center;
   font-size: 7em;
-  color: #1cd100;
+  color: #00a004;
 }
 
 #seeker-h2 {
   text-align: center;
   font-size: 1.6em;
-  color: #1cd100;
+  color: #00a004;
 }
 
 #employer-h1 {
   align-self: center;
   font-size: 7em;
-  color: #1cd100;
+  color: #00a004;
 }
 
 #employer-h2 {
   align-self: center;
   font-size: 1.6em;
-  color: #1cd100;
+  color: #00a004;
 }
 
 
@@ -90,20 +90,20 @@
 
 
 #zipcode-title-input::placeholder #job-title-input::placeholder {
-  color: #1cd100;
+  color: #00a004;
   font-size: 1.5em;
 }
 
 #landing-button {
   background-color:black;
   position: relative;
-  border-color: #1cd100;
+  border-color: #00a004;
 }
 
 #button-div {
   margin-top: 5%;
   position: relative;
-  border-color: #1cd100;
+  border-color: #00a004;
   display: flex;
   align-items: center;
   justify-content: center;

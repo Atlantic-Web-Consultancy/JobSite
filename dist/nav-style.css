@@ -11,8 +11,8 @@ body {
 }
 
 #nav-logo {
-  color: #1cd100;
-  font-size: 1.4em;
+  color: #00a004;
+  font-size: 4em;
 }
 
 #dropdown {
@@ -50,13 +50,13 @@ body {
 }
 
 .dropdown-item:hover {
-  color:#00C805!important;
+  color:#00a004!important;
   background-color: black;
 }
 
 .dropdown-item:active, .dropdown-item.active {
   color: #fff!important;
-  background-color: #00C805!important;
+  background-color: #00a004!important;
 }
 
 .green-btn {
