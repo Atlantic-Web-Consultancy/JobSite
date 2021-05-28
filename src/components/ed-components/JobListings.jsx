@@ -8,14 +8,14 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 
 function JobListings() {
-  const [job, setJob] = useState('');
+  const [job, setJob] = useState('Admin');
   const [zip, setZip] = useState('');
   const [partTime, setPartTime] = useState(false);
   const [remote, setRemote] = useState(false);
   const [minSlider, setSalaryMin] = useState('');
   const [maxSlider, setSalaryMax] = useState('');
-  const [min, setMinSalary] = useState(0);
-  const [max, setMaxSalary] = useState(0);
+  const [min, setMinSalary] = useState(40000);
+  const [max, setMaxSalary] = useState(200000);
   const [jobs, setJobs] = useState([]);
 
   const handleChange = () => {
@@ -57,14 +57,14 @@ function JobListings() {
     console.log('Called')
     event.preventDefault()
     if (partTime) {
-      var employmentType = 'Full-Time'
+      var employmentType = 'Part-Time'
     } else {
       var employmentType = 'Full-Time'
     }
     if (remote) {
-      var remote = 'Remote'
+      var jobLogistic = 'Remote'
     } else {
-      var remote = 'Onsite'
+      var jobLogistic = 'Onsite'
     }
 
     $.ajax({
@@ -77,7 +77,7 @@ function JobListings() {
       data: {
         employmentTitle: job,
         employmentType,
-        remote,
+        remote: jobLogistic,
         distance: zip,
         salaryMin: min,
         salaryMax: max,

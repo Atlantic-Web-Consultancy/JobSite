@@ -66,7 +66,7 @@
   grid-template-columns: repeat(2, 1fr);
   align-items: stretch;
   justify-items: center;
-  background-color: #c2eccd;
+  background-color: green;
   position: relative;
     left: 60;
     top: 20;

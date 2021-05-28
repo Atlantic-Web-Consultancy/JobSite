@@ -1,8 +1,12 @@
 import React from 'react';
 
 function Listing({job}) {
-  () => {
-    console.log('hello')
+
+  const dateNum = parseInt(job.date_posted, 10);
+  const dateObject = new Date(dateNum);
+  const humanDateFormat = dateObject.toLocaleString();
+  const testFunc = () => {
+    console.log('test',dateNum)
   }
   return (
     <div id="listing-wrapper">
@@ -11,13 +15,13 @@ function Listing({job}) {
         <br/>
         <span> {(job.employer_id === null ? '' : `${job.employer_id} |`)}  {job.experience_level}</span>
         <br/>
-        <span> {job.location} | {job.salary}</span>
+        <span> {`zip code: ${job.location}`} | {`Salary: ${job.salary}`}</span>
       </div>
       <div id="description-wrapper">
         {job.description}
       </div>
       <br/>
-      <span>{job.date_posted}</span>
+      <span>{humanDateFormat}</span>
     </div>
   )
 }
