@@ -1,4 +1,5 @@
 const express = require('express');
+const axios = require('axios');
 
 const app = express();
 const path = require('path');
@@ -20,7 +21,6 @@ app.post('/login', (req, res) => {
     password: req.body.password
   })
   .then((response) => {
-    console.log('req going to client', response);
     res.cookie('jobsite', response.headers['set-cookie'][0].split('=')[1].split(';')[0]);
     res.end();
   })
@@ -34,9 +34,9 @@ app.get('/employers/jobpostings', (req, res) => {
     headers: {
       Cookie: req.headers.cookie,
     }})
-    .then((data) => {
+    .then((response) => {
       res.status(200)
-      res.send(data.data)
+      res.send(response.data)
     })
     .catch((err) => {
       res.status(404)
