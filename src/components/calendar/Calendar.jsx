@@ -14,7 +14,7 @@ class Calendar extends React.Component {
       eventDates: [],
       eventTitle: '',
       eventDetails: '',
-      navItems: ['Home', 'Calendar', 'Notes', 'My Jobs', 'Login/Logout'],
+      navItems: ['Home', 'Calendar', 'Notes', 'My Jobs', 'Login'],
       popUp: false,
     };
   }

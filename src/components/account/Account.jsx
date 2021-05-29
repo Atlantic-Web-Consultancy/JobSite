@@ -5,6 +5,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 import NewEmployer from './NewEmployer.jsx';
 import NewJobSeeker from './NewJobSeeker.jsx';
 import Parse from './Parse.js';
+import $ from 'jquery';
 
 class Account extends React.Component {
   constructor(props) {
@@ -15,7 +16,8 @@ class Account extends React.Component {
       password: '',
       currentView: '',
     };
-
+    this.submitEmployer = this.submitEmployer.bind(this);
+    this.submitEmployee = this.submitEmployee.bind(this);
     this.initialState = this.state;
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,7 +26,6 @@ class Account extends React.Component {
   }
 
   handleChange(e) {
-    console.log(e.target.value)
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -35,11 +36,32 @@ class Account extends React.Component {
   }
 
   submitEmployee = () => {
-    let login = this.state;
+    let loginCredentials = { username: this.state.username, password: this.state.password }
     this.setState({
       currentView: 'employee',
     })
     Parse.login(login, this.loginResponse);
+  }
+
+  submitEmployer(event) {
+    event.preventDefault()
+    let loginCredentials = { username: this.state.username, password: this.state.password }
+    // Parse.login(login, this.loginResponse);
+    $.ajax({
+      method: 'POST',
+      url: '/login',
+      data: loginCredentials,
+      xhrFields: {
+        withCredentials: true
+      },
+      success: () => {
+        console.log('successful login')
+        this.props.handleSubmit(view)
+      },
+      error: (err) => {
+        console.log('err login', err)
+      }
+    })
   }
 
   loginResponse = (response) => {
@@ -105,7 +127,7 @@ class Account extends React.Component {
           </Form.Group>
           <Form.Group>
             <LinkContainer to="/">
-              <Button onClick={() => this.handleSubmit('employer')} style={{ marginTop: '15px' }} className="submit-btn" type="button">Log In</Button>
+              <Button onClick={this.submitEmployer} style={{ marginTop: '15px' }} className="submit-btn" type="button">Log In</Button>
             </LinkContainer>
           </Form.Group>
           <Form.Group>

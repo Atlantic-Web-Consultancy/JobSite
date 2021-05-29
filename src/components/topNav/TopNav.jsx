@@ -27,8 +27,8 @@ const TopNav = props => {
           <Dropdown.Toggle id="dropdown-button" />
 
           <Dropdown.Menu id="dropdown-menu">
-            <LinkContainer to="/login/logout">
-              <Dropdown.Item>Login/Logout</Dropdown.Item>
+            <LinkContainer to="/login">
+              <Dropdown.Item>Login</Dropdown.Item>
             </LinkContainer>
           </Dropdown.Menu>
         </Dropdown>

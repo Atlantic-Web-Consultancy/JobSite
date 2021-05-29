@@ -1,27 +1,24 @@
 import React from 'react';
+import moment from 'moment';
 
 function Listing({job}) {
 
   const dateNum = parseInt(job.date_posted, 10);
   const dateObject = new Date(dateNum);
   const humanDateFormat = dateObject.toLocaleString();
-  const testFunc = () => {
-    console.log('test',dateNum)
-  }
   return (
-    <div id="listing-wrapper">
-      <div id="first-row">
-        <span> {job.title} | {job.employment_type}</span>
-        <br/>
-        <span> {(job.employer_id === null ? '' : `${job.employer_id} |`)}  {job.experience_level}</span>
-        <br/>
-        <span> {`zip code: ${job.location}`} | {`Salary: ${job.salary}`}</span>
-      </div>
-      <div id="description-wrapper">
-        {job.description}
-      </div>
-      <br/>
-      <span>{humanDateFormat}</span>
+    <div className="tabs">
+      <h2>{job.title} | {job.employment_type}</h2>
+      <section>{job.organization}</section>
+      <section>{job.description}</section>
+      <br />
+      <section>Type of Work: {job.type_work}</section>
+      <section>Experience Required: {job.experience_level}</section>
+      <br />
+      <section>Salary: ${job.salary}</section>
+      <section>{moment(humanDateFormat).fromNow()}</section>
+      <br />
+      <div id="applyButton">Apply Today!</div>
     </div>
   )
 }

@@ -25,6 +25,7 @@
     "@fullcalendar/daygrid": "^5.7.0",
     "@fullcalendar/interaction": "^5.7.0",
     "@fullcalendar/react": "^5.7.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "css-loader": "^5.2.6",
     "express": "^4.17.1",

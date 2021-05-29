@@ -13,7 +13,7 @@ class EmployersJobs extends React.Component {
   componentDidMount() {
     $.ajax({
       method: 'GET',
-      url: 'http://localhost:3000/employers/jobpostings',
+      url: '/employers/jobpostings',
       success: (data) => {
         console.log('jobdata', data);
         this.setState({

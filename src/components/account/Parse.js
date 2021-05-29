@@ -1,21 +1,18 @@
+import $ from 'jquery';
+
 const Parse = {
-  url: 'http://3.137.145.92',
-
-  login: async (credentials, callback) => {
-    try {
-      const result = await fetch(`${Parse.url}/login`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(credentials)
-      })
-
-      callback(null);
-
-    } catch(err) {
-      callback(err);
-    }
+  login: (credentials, callback) => {
+    $.ajax({
+      method: 'POST',
+      url: '/login',
+      data: credentials,
+      crossDomain: true,
+      xhrFields: {
+        withCredentials: true
+      },
+      success: () => console.log('success logging in'),
+      error: (err) => console.log('err', err),
+    })
   },
 
   logout: async (credentials, callback) => {

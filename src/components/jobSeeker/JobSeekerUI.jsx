@@ -33,7 +33,11 @@ class JobSeekerUI extends React.Component {
 
           <Card style={cardStyle1}>
             <Card.Body>
-              <Card.Title style={cardTitle}>Job Listings.</Card.Title>
+              <Card.Title style={cardTitle}>
+                Job
+                <br />
+                Listings.
+              </Card.Title>
               <Card.Text style={cardText}>
                 Browse available job listings.
               </Card.Text>
@@ -45,19 +49,27 @@ class JobSeekerUI extends React.Component {
 
           <Card style={cardStyle2}>
             <Card.Body>
-              <Card.Title style={cardTitle}>Job Radar.</Card.Title>
+              <Card.Title style={cardTitle}>
+                My
+                <br />
+                Jobs.
+              </Card.Title>
               <Card.Text style={cardText}>
                 View applications, notes, and more.
               </Card.Text>
               <LinkContainer to="/myjobs">
-                <Button className="green-btn" variant="primary" style={cardButton} size="lg">Job Radar</Button>
+              <Button className="green-btn" variant="primary" style={cardButton} size="lg">My Jobs</Button>
               </LinkContainer>
             </Card.Body>
           </Card>
 
           <Card style={cardStyle3}>
             <Card.Body>
-              <Card.Title style={cardTitle}>Job Calendar.</Card.Title>
+              <Card.Title style={cardTitle}>
+                Job
+                <br />
+                Calendar.
+              </Card.Title>
               <Card.Text style={cardText}>
                 See the next scheduled event here.
               </Card.Text>

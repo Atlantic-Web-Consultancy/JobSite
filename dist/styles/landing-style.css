@@ -3,156 +3,108 @@
   flex-direction: column;
   justify-content: flex-start;
   border: 2px solid black;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
-  color: #efede8;
+  background-color: black;
 }
 
 #banner {
   display: flex;
-  height: 100%;
+  height: 60%;
 }
 
 #image-1 {
-  background-image: url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1063&q=80");
+  background-image: url("https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80");
   background-size: contain;
   background-repeat: no-repeat;
-  min-height: 200px;
 }
 
 #image-2 {
   background-image: url("./firstOne.jpeg");
   background-size: contain;
   background-repeat: no-repeat;
-  min-height: 200px;
 }
 
 #image-3 {
   background-image: url("https://images.unsplash.com/photo-1538688423619-a81d3f23454b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
   background-size: contain;
   background-repeat: no-repeat;
-  min-height: 200px;
 }
 
-
-#seeker {
-  position: relative;
+#seeker #employer {
   text-align: center;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-  height: 90vh;
   width: 100%;
-  border: 2px solid grey;
-  background: green;
-}
-
-#employer {
-  position: relative;
-  text-align: center;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-  height: 90vh;
-  width: 100%;
-  border: 2px solid grey;
-  background: green;
+  background-color: black;
 }
 
 #header-style {
-  position: relative;
-  /* display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  align-content: space-between; */
   text-align: center;
+  background-color: black;
+  align-items: center;
 }
 
 #seeker-h1 {
   text-align: center;
-  margin: 20px;
   font-size: 7em;
-  position: relative;
-  left: 90;
-
+  color: #00a004;
 }
 
 #seeker-h2 {
-  /* align-self: center; */
-  margin: 20px;
-  font-size: 1.6em;
-  position: relative;
-  top: 20;
+  text-align: center;
+  font-size: 2em;
+  color: #00a004;
 }
 
 #employer-h1 {
   align-self: center;
-  margin: 20px;
   font-size: 7em;
+  color: #00a004;
 }
 
 #employer-h2 {
   align-self: center;
-  margin: 20px;
-  font-size: 1.6em;
+  font-size: 2em;
+  color: #00a004;
 }
 
 
 #form-row {
   display:flex;
+  margin-top: 5%;
   flex-direction: column;
-  justify-content: space-between;
-  margin-top:50px;
-  position: relative;
-    left: 100;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
 }
 
-#job-title-input {
-  background: black;
+#job-title-input #zipcode-title-input {
+  background-color: black;
   border: none;
   border-bottom: 2px solid white;
   border-radius: 4px;
-  color: white;
-  height: 30px;
+  color: black;
   width: 350px;
   font-size: 20;
   text-align: center;
 }
 
-#zipcode-title-input {
-  background: black;
-  border: none;
-  border-bottom: 2px solid white;
-  border-radius: 4px;
-  color: white;
-  height: 30px;
-  width: 350px;
-  font-size: 20;
-  text-align: center;
-}
 
-#zipcode-title-input::placeholder {
-  color: white;
-  font-size: 1.5em;
-}
-
-#job-title-input::placeholder {
-  color: white;
+#zipcode-title-input::placeholder #job-title-input::placeholder {
+  color: #00a004;
   font-size: 1.5em;
 }
 
 #landing-button {
-  background:black;
+  background-color:black;
   position: relative;
-  top: 60px;
-  border-color: green;
+  border-color: #00a004;
 }
 
 #button-div {
+  margin-top: 5%;
   position: relative;
-  top: 100;
-  border-color: green;
+  border-color: #00a004;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

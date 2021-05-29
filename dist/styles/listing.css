@@ -1,6 +1,5 @@
 #listing-wrapper {
   border: 2px solid black;
-  background: #c2eccd;
   color: black;
   padding: 10;
   margin: 10;
@@ -9,14 +8,12 @@
 }
 
 #first-row {
-  border: 2px solid black;
   padding: 10;
   margin: 10;
   background: white;
 }
 
 #description-wrapper {
-  border: 2px solid black;
   padding: 10;
   margin: 10;
   background: white;

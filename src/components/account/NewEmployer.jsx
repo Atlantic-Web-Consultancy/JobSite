@@ -3,16 +3,6 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { LinkContainer } from 'react-router-bootstrap';
 
-
-//employer:
-//username
-//first_name
-//last_name
-//email
-//phone
-//organization
-//password
-
 class NewEmployer extends React.Component {
   constructor(props) {
     super(props);
@@ -33,6 +23,7 @@ class NewEmployer extends React.Component {
       [e.target.name]: e.target.value,
     })
   }
+
 
   changeView = view => {
     this.props.changeView(view);
